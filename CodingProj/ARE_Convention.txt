@@ -1,0 +1,6 @@
+
+1. Ban moi Cot C_ID  = C_PATHCODE = C_PARENTID + C_AREAID bang cu
+
+2. Data cua bang cu fai dc convert nhu sau trc khi chuyen wa cho bang moi
+2.1 Area cao nhat cua bang cu se co areaid = 00001 va parentid = 0
+2. Cac areaid va parentid fai dc chuyen duoi dang XXXXX, vi du tphcm cu la 200 fai chuyen thanh 00200 roi moi +
