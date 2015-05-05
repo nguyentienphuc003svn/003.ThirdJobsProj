@@ -1,0 +1,11 @@
+
+
+1. You must have Java installed in ur PC to run this app
+
+2. Run the MyServer.cmd to run the Server
+
+3. Run the MyClient.cmd to run a Client
+
+Note:
+Server only can run once
+You can run MyClient.cmd as many times as u want to create multipe clients
