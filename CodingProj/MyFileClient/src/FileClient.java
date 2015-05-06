@@ -1,6 +1,8 @@
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.rmi.*;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.*;
@@ -12,6 +14,7 @@ public class FileClient  extends UnicastRemoteObject implements FileClientInt {
 	 */
 	private static final long serialVersionUID = 1L;
 	public String name;
+	
 	public  FileClient(String n) throws RemoteException {
 		super();
 		name=n;
@@ -30,8 +33,20 @@ public class FileClient  extends UnicastRemoteObject implements FileClientInt {
         	out.write(data,0,len);
         	out.flush();
         	out.close();
-        	System.out.println("Done writing data...");
-        }catch(Exception e){
+        	
+			System.out.println("Server has sent an update file called ServerEditedReceived.txt");
+			System.out.println("\n\nThe content of ServerEditedReceived.txt as");
+
+			//
+			System.out.println("-----------------");
+			BufferedReader br = new BufferedReader(new FileReader("C:\\ServerEditedReceived.txt")); 
+			String line;
+			while ((line = br.readLine()) != null) {
+				System.out.println(line);
+			}
+			System.out.println("-----------------");
+        }
+        catch(Exception e){
         	e.printStackTrace();
         }
 		return true;
@@ -49,7 +64,8 @@ public class FileClient  extends UnicastRemoteObject implements FileClientInt {
 				c.receiveData(f1.getName(), mydata, mylen);	 
 				mylen=in.read(mydata);				 
 			}
-		}catch(Exception e){
+		}
+		catch(Exception e){
 			e.printStackTrace();
 
 		}

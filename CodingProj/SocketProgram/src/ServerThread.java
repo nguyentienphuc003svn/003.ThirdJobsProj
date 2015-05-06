@@ -8,7 +8,6 @@ public class ServerThread extends Thread
 	private Server server = null;
 	private Socket socket = null;
 	private int ID = -1;
-	private String myIP = "";
 	private DataInputStream streamIn = null;
 	private DataOutputStream streamOut = null;
 	public static ServerThread clientsTemp[];
@@ -19,7 +18,6 @@ public class ServerThread extends Thread
 		server = _server;
 		socket = _socket;
 		ID     = socket.getPort();
-		myIP = ((InetSocketAddress)socket.getRemoteSocketAddress()).getAddress().toString().trim();
 	}
 
 	public void send(String msg)
@@ -40,11 +38,6 @@ public class ServerThread extends Thread
 	public int getID()
 	{  
 		return ID;
-	}
-	
-	public String getMyIP()
-	{  
-		return myIP;
 	}
 
 	public void run()

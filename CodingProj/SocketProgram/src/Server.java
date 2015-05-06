@@ -46,7 +46,7 @@ public class Server implements Runnable
 			thread.start();
 		}
 	}
-
+	
 	public void stop()
 	{  
 		if (thread != null)
@@ -58,13 +58,8 @@ public class Server implements Runnable
 
 	private int findClient(int ID)
 	{  
-		//System.out.println("Find for ID " + ID);
-		
 		for (int i = 0; i < clientCount; i++)
-		{	
-			//System.out.println("ID found " + clients[i].getID());
 			if (clients[i].getID() == ID) return i;
-		}
 
 		return -1;
 	}
@@ -72,16 +67,11 @@ public class Server implements Runnable
 	public synchronized void handle(int ID, String input)
 	{  
 		System.out.println(ID + ": " + input);
-
+		
 		if (input.equals(".bye"))
 		{  
-
-			//Decrease 5 clients
-			String SocketIPNOW = clients[findClient(ID)].getMyIP().trim();
-			IPAddress.replace(SocketIPNOW, IPAddress.get(SocketIPNOW)-1);
-
 			clients[findClient(ID)].send(".bye");
-			remove(ID);
+			remove(ID); 
 		}
 		else
 			for (int i = 0; i < clientCount; i++)
@@ -118,47 +108,6 @@ public class Server implements Runnable
 
 	private void addThread(Socket socket)
 	{  
-
-		//		//Check if more than 5 client for an IP-------------------
-		//		//System.out.println("Checking for IP SAME");
-		//		String SocketIP = ((InetSocketAddress)socket.getRemoteSocketAddress()).getAddress().toString().trim();
-		//		//System.out.println("IP " + SocketIP);
-		//		if (IPAddress.keySet().size()<=0)
-		//		{
-		//			IPAddress.put(SocketIP, 1);
-		//		}
-		//		else
-		//		{
-		//			boolean Addable = false;
-		//			for (String IPKey : IPAddress.keySet())
-		//			{
-		//				if (IPKey.trim().equals(SocketIP)) Addable = true; 
-		//			}
-		//
-		//			if (Addable) IPAddress.replace(SocketIP, IPAddress.get(SocketIP)+1);
-		//			else IPAddress.put(SocketIP, 1);
-		//		}
-		//
-		//		for (String IPKey : IPAddress.keySet())
-		//		{
-		//			if (IPAddress.get(IPKey) >=5)
-		//			{
-		//				try{
-		//					String serverNotify = "\n\n>>>There are more than 5 connection from IP " + IPKey + " >>> CANNOT connect more"; 
-		//					//System.out.println(serverNotify);
-		//					this.handle(000000, serverNotify);
-		//					return;
-		//					
-		//					//server.close();
-		//					//thread.stop();
-		//				}
-		//				catch(Exception e)
-		//				{}
-		//			}
-		//		}
-		//		//-----------------
-
-
 		if (clientCount < clients.length)
 		{  
 			System.out.println("Client accepted: " + socket);
@@ -167,35 +116,16 @@ public class Server implements Runnable
 			try
 			{  
 				clients[clientCount].open(); 
-				clients[clientCount].start();
-				clientCount++;
-
-				//Remove after Added
-				if (!this.CheckFiveConn(socket))
-				{				
-					String SocketIPNOW = ((InetSocketAddress)socket.getRemoteSocketAddress()).getAddress().toString().trim();
-					String serverNotify = ">>>There are more than 5 connection from IP " + SocketIPNOW + " \n>>> CANNOT connect more"; 
-
-					clients[clientCount-1].send("Server" + ": " + serverNotify);
-
-					handle(clients[clientCount-1].getID(), ".bye");
-				}
-				
-				//clientCount++;
-				
+				clients[clientCount].start();  
+				clientCount++; 
 			}
 			catch(IOException ioe)
 			{System.out.println("Error opening thread: " + ioe); } 
 		}
 		else
 			System.out.println("Client refused: maximum " + clients.length + " reached.");
-
-	}
-
-	public boolean CheckFiveConn(Socket socket)
-	{
-
-		//Check if more than 5 client for an IP-------------------
+		
+		//Check if more than 5 client for an IP
 		//System.out.println("Checking for IP SAME");
 		String SocketIP = ((InetSocketAddress)socket.getRemoteSocketAddress()).getAddress().toString().trim();
 		//System.out.println("IP " + SocketIP);
@@ -210,33 +140,26 @@ public class Server implements Runnable
 			{
 				if (IPKey.trim().equals(SocketIP)) Addable = true; 
 			}
-
+			
 			if (Addable) IPAddress.replace(SocketIP, IPAddress.get(SocketIP)+1);
 			else IPAddress.put(SocketIP, 1);
 		}
-
+		
 		for (String IPKey : IPAddress.keySet())
 		{
-			if (IPAddress.get(IPKey) >=6)
+			if (IPAddress.get(IPKey) >=5)
 			{
 				try{
-					//String serverNotify = "\n\n>>>There are more than 5 connection from IP " + IPKey + " >>> CANNOT connect more"; 
-					//System.out.println(serverNotify);
-					//this.handle(000000, serverNotify);
-					return false;
-
-					//server.close();
-					//thread.stop();
+				System.out.println("\n\n>>>There are more than 5 connection from IP " + IPKey + " >>> Server Quit SOON");
+				server.close();
+				thread.stop();
 				}
 				catch(Exception e)
 				{}
 			}
 		}
-
-		return true;
-		//-----------------
 	}
-
+	
 	public int getTotalClient()
 	{
 		return this.clientCount;

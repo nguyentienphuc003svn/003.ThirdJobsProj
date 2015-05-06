@@ -3,6 +3,7 @@ import java.rmi.Naming;
 public class StartFileServer {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
 		try{
 			
 			java.rmi.registry.LocateRegistry.createRegistry(1099);
@@ -14,7 +15,8 @@ public class StartFileServer {
 			
 			
 			
-		}catch(Exception e){
+		}
+		catch(Exception e){
 			e.printStackTrace();
 		}
 	}	
