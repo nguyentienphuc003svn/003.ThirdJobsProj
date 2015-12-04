@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrator/Desktop/JavaLibCollection/axis.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrator/Desktop/JavaLibCollection/jaxrpc.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrator/Desktop/JavaLibCollection/saaj.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrator/Desktop/JavaLibCollection/commons-discovery-0.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrator/Desktop/JavaLibCollection/poi-3.6-20091214.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrator/Desktop/JavaLibCollection/servlet-api.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrator/Desktop/JavaLibCollection/dom4j-1.6.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrator/Desktop/JavaLibCollection/c3p0-0.9.1.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrator/Desktop/JavaLibCollection/GRGPINPad.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrator/Desktop/JavaLibCollection/msbase.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrator/Desktop/JavaLibCollection/nlscharset12.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrator/Desktop/JavaLibCollection/proxool-0.9.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrator/Desktop/JavaLibCollection/mssqlserver.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrator/Desktop/JavaLibCollection/msutil.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrator/Desktop/JavaLibCollection/objectweb-datasource.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrator/Desktop/JavaLibCollection/proxool-cglib.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrator/Desktop/JavaLibCollection/RXTXcomm.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrator/Desktop/JavaLibCollection/iText-2.1.5.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrator/Desktop/JavaLibCollection/iText-2.1.7.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrator/Desktop/JavaLibCollection/jhsm.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrator/Desktop/JavaLibCollection/jsmsengine.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrator/Desktop/JavaLibCollection/log4j-1.2.11.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrator/Desktop/JavaLibCollection/jpos.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrator/Desktop/JavaLibCollection/mail.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrator/Desktop/JavaLibCollection/obts.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrator/Desktop/JavaLibCollection/commons-email-1.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrator/Desktop/JavaLibCollection/commons-logging.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrator/Desktop/JavaLibCollection/jdom-1.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrator/Desktop/JavaLibCollection/mysql-connector-java-5.0.8-bin.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrator/Desktop/JavaLibCollection/activation.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrator/Desktop/JavaLibCollection/jSMSServer.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrator/Desktop/JavaLibCollection/spring.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrator/Desktop/JavaLibCollection/org.apache.commons.logging_1.0.4.v201005080501.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrator/Desktop/JavaLibCollection/javax.wsdl_1.6.2.v201005080631.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrator/Desktop/JavaLibCollection/sunjce_provider.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrator/Desktop/JavaLibCollection/rt.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrator/Desktop/JavaLibCollection/message.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrator/Desktop/JavaLibCollection/comm.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrator/Desktop/JavaLibCollection/smslib-3.5.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrator/Desktop/JavaLibCollection/smsserver-3.5.1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

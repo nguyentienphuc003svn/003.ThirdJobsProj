@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	<bean id="jotm" class="org.springframework.transaction.jta.JotmFactoryBean"/>
+
+	<bean id="dataSource" class="org.logicalcobwebs.proxool.ProxoolDataSource" destroy-method="close">
+		<property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
+		<property name="driverUrl" value="jdbc:oracle:thin:@192.168.11.186:1521:feel"/>
+		<property name="user" value="feel"/>
+		<property name="password" value="feel"/>
+		<property name="alias" value="feelview"/>
+		<!-- proxoolè‡ªåŠ¨ä¾¦å¯Ÿå„ä¸ªè¿žæŽ¥çŠ¶æ€çš„æ—¶é—´é—´éš”(æ¯«ç§’),ä¾¦å¯Ÿåˆ°ç©ºé—²çš„è¿žæŽ¥å°±é©¬ä¸Šå›žæ”¶,è¶…æ—¶çš„é”€æ¯(é»˜è®¤30ç§’),0.9.1æš‚æ—¶ä¸èƒ½è®¾ç½®
+		<property name="houseKeepingSleepTime" value="90000"/>-->
+		<!-- æœ€å°‘ä¿æŒçš„ç©ºé—²è¿žæŽ¥æ•° (é»˜è®¤5ä¸ª)-->
+		<property name="prototypeCount" value="6"/>
+		<!-- æœ€å¤§è¿žæŽ¥æ•° (é»˜è®¤15ä¸ª)-->
+		<property name="maximumConnectionCount" value="300"/>
+		<!-- æœ€å°è¿žæŽ¥æ•° (é»˜è®¤5ä¸ª) -->
+		<property name="minimumConnectionCount" value="20"/>
+		<property name="trace" value="true"/>
+		<property name="verbose" value="true"/>
+	</bean>
+
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource"><ref local="dataSource"/></property>
+	</bean>
+
+	<bean id="myObtsBean" class="obts.core.MyObtsBean" scope="prototype">
+		<property name="dataSource"><ref bean="dataSource"/></property>
+		<property name="transactionManager"><ref bean="transactionManager"/></property>
+	</bean>
+
+	<bean id="obtsBean"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean" scope="prototype">
+		<property name="transactionManager"><ref bean="transactionManager"/></property>
+		<property name="target"><ref bean="myObtsBean"/></property>
+		<property name="transactionAttributes">
+			<props>
+					<prop key="111*">PROPAGATION_REQUIRED,-Exception</prop>
+					<prop key="11get*">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+	</bean>
+</beans>

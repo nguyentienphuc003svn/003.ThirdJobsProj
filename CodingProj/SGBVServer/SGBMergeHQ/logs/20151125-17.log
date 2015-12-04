@@ -1,0 +1,151 @@
+20151125 17:10:18.200 Can go to 10002
+20151125 17:10:18.201 In the Status is [58] parts
+20151125 17:10:18.201 Value at [0] is [10002]
+20151125 17:10:18.202 Value at [1] is [0402]
+20151125 17:10:18.203 Value at [2] is [01G21L]
+20151125 17:10:18.204 Value at [3] is [10000010]
+20151125 17:10:18.205 Value at [4] is [0]
+20151125 17:10:18.206 Value at [5] is [Admin]
+20151125 17:10:18.206 Value at [6] is [0]
+20151125 17:10:18.207 Value at [7] is [ ]
+20151125 17:10:18.208 Value at [8] is [0]
+20151125 17:10:18.209 Value at [9] is [ ]
+20151125 17:10:18.210 Value at [10] is [3]
+20151125 17:10:18.211 Value at [11] is [ ]
+20151125 17:10:18.213 Value at [12] is [0]
+20151125 17:10:18.214 Value at [13] is [ ]
+20151125 17:10:18.215 Value at [14] is [3]
+20151125 17:10:18.216 Value at [15] is [ ]
+20151125 17:10:18.216 Value at [16] is [0]
+20151125 17:10:18.217 Value at [17] is [ ]
+20151125 17:10:18.218 Value at [18] is [0]
+20151125 17:10:18.219 Value at [19] is [ ]
+20151125 17:10:18.219 Value at [20] is [3]
+20151125 17:10:18.220 Value at [21] is [ ]
+20151125 17:10:18.221 Value at [22] is [0]
+20151125 17:10:18.222 Value at [23] is [ ]
+20151125 17:10:18.223 Value at [24] is [0]
+20151125 17:10:18.223 Value at [25] is [ ]
+20151125 17:10:18.224 Value at [26] is [0]
+20151125 17:10:18.225 Value at [27] is [ ]
+20151125 17:10:18.226 Value at [28] is [0]
+20151125 17:10:18.227 Value at [29] is [ ]
+20151125 17:10:18.227 Value at [30] is [0]
+20151125 17:10:18.228 Value at [31] is [ ]
+20151125 17:10:18.229 Value at [32] is [0]
+20151125 17:10:18.230 Value at [33] is [ ]
+20151125 17:10:18.231 Value at [34] is [9]
+20151125 17:10:18.231 Value at [35] is [ ]
+20151125 17:10:18.232 Value at [36] is [00013]
+20151125 17:10:18.233 Value at [37] is [3]
+20151125 17:10:18.234 Value at [38] is [ ]
+20151125 17:10:18.235 Value at [39] is [023]
+20151125 17:10:18.236 Value at [40] is [1$2$1$2$3$3$]
+20151125 17:10:18.236 Value at [41] is [0$0$0$0$0$0$]
+20151125 17:10:18.237 Value at [42] is [20000$100000$50000$500000$0$0$]
+20151125 17:10:18.238 Value at [43] is [VND$VND$VND$VND$VND$VND$]
+20151125 17:10:18.239 Value at [44] is [100$0$300$166$0$0$]
+20151125 17:10:18.239 Value at [45] is [0$0$0$0$0$0$]
+20151125 17:10:18.240 Value at [46] is [0$0$88$0$0$0$]
+20151125 17:10:18.241 Value at [47] is [20130926120000]
+20151125 17:10:18.241 Value at [48] is [20130926120000]
+20151125 17:10:18.242 Value at [49] is [0$0$0$0$0$0$]
+20151125 17:10:18.243 Value at [50] is [010]
+20151125 17:10:18.244 Value at [51] is [5$0$2$3$0$0$]
+20151125 17:10:18.246 Value at [52] is [0$0$0$0$0$0$]
+20151125 17:10:18.247 Value at [53] is []
+20151125 17:10:18.248 Value at [54] is []
+20151125 17:10:18.249 Value at [55] is []
+20151125 17:10:18.250 Value at [56] is []
+20151125 17:10:18.251 Value at [57] is []
+20151125 17:10:18.252 In the Status 2 is [58] parts
+20151125 17:10:18.716 Event Connect
+20151125 17:10:18.736 Connect User: [feel]
+20151125 17:10:18.757 jdbc 2.0:retNum=[1]6
+20151125 17:10:18.761 sql=[select C_TERMID as tmid,c_time as opdt,c_code as uscd,c_msg as clnm,C_SOLVE_TIME as cuno,C_USERID as cdtp from T_TML_EVENT where (C_SOLVE_MSG <=' ' or C_SOLVE_MSG is null) and (C_USERID <'A' or C_USERID is null)]
+20151125 17:10:18.762 ccas.Mysql:selectSql:2749:1
+20151125 17:10:18.762 ==Processing time:26 ms==
+20151125 17:10:18.763 ==Processing time:27 ms==
+20151125 17:10:18.836 Jdbc-Url:jdbc:oracle:thin:@192.168.11.186:1521:feel
+20151125 17:10:18.839 DataSource init successful,DriverName=Oracle JDBC driver,11.1.0.7.0-Production
+20151125 17:10:18.840 Product Version=Oracle Database 10g Enterprise Edition Release 10.2.0.1.0 - Production
+With the Partitioning, OLAP and Data Mining options,dbtype=oracle,dbname=feel
+20151125 17:10:18.858 ccas.Mysql:getValueFromMetaRst:1207,conum=[5]...
+20151125 17:10:18.859 ==Processing time:95 ms==
+20151125 17:10:18.860 ccas.Mysql:getRowSql:1246:select C_ROLE as cunm,c_time as cldt,C_ADVICETYPE as idtp,I_SENDCOUNT as num,I_SENDINTERVAL as anum from T_ADVICEPOLICY where C_TERMID='10000010' and C_CODE='A0811'
+20151125 17:10:18.860 ==Processing time:96 ms==
+20151125 17:10:18.861 ==Processing time:97 ms==
+20151125 17:10:18.864 ==Processing time:100 ms==
+20151125 17:12:48.513 In the Cashload is [58] parts
+20151125 17:12:48.524 Value at [0] is [10004]
+20151125 17:12:48.525 Value at [1] is [0402]
+20151125 17:12:48.526 Value at [2] is [01G21L]
+20151125 17:12:48.526 Value at [3] is [10000010]
+20151125 17:12:48.527 Value at [4] is [0]
+20151125 17:12:48.528 Value at [5] is [Admin]
+20151125 17:12:48.528 Value at [6] is [0]
+20151125 17:12:48.529 Value at [7] is [ ]
+20151125 17:12:48.530 Value at [8] is [0]
+20151125 17:12:48.530 Value at [9] is [ ]
+20151125 17:12:48.531 Value at [10] is [3]
+20151125 17:12:48.532 Value at [11] is [ ]
+20151125 17:12:48.533 Value at [12] is [0]
+20151125 17:12:48.534 Value at [13] is [ ]
+20151125 17:12:48.534 Value at [14] is [3]
+20151125 17:12:48.535 Value at [15] is [ ]
+20151125 17:12:48.536 Value at [16] is [0]
+20151125 17:12:48.537 Value at [17] is [ ]
+20151125 17:12:48.537 Value at [18] is [0]
+20151125 17:12:48.538 Value at [19] is [ ]
+20151125 17:12:48.539 Value at [20] is [3]
+20151125 17:12:48.540 Value at [21] is [ ]
+20151125 17:12:48.541 Value at [22] is [0]
+20151125 17:12:48.541 Value at [23] is [ ]
+20151125 17:12:48.542 Value at [24] is [0]
+20151125 17:12:48.543 Value at [25] is [ ]
+20151125 17:12:48.544 Value at [26] is [0]
+20151125 17:12:48.545 Value at [27] is [ ]
+20151125 17:12:48.546 Value at [28] is [0]
+20151125 17:12:48.546 Value at [29] is [ ]
+20151125 17:12:48.547 Value at [30] is [0]
+20151125 17:12:48.548 Value at [31] is [ ]
+20151125 17:12:48.549 Value at [32] is [0]
+20151125 17:12:48.549 Value at [33] is [ ]
+20151125 17:12:48.550 Value at [34] is [9]
+20151125 17:12:48.551 Value at [35] is [ ]
+20151125 17:12:48.552 Value at [36] is [00013]
+20151125 17:12:48.552 Value at [37] is [3]
+20151125 17:12:48.553 Value at [38] is [ ]
+20151125 17:12:48.554 Value at [39] is [023]
+20151125 17:12:48.555 Value at [40] is [1$2$1$2$3$3$]
+20151125 17:12:48.556 Value at [41] is [0$0$0$0$0$0$]
+20151125 17:12:48.556 Value at [42] is [20000$100000$50000$500000$0$0$]
+20151125 17:12:48.557 Value at [43] is [VND$VND$VND$VND$VND$VND$]
+20151125 17:12:48.557 Value at [44] is [100$0$300$166$0$0$]
+20151125 17:12:48.558 Value at [45] is [0$0$0$0$0$0$]
+20151125 17:12:48.559 Value at [46] is [0$0$88$0$0$0$]
+20151125 17:12:48.560 Value at [47] is [20130926120000]
+20151125 17:12:48.560 Value at [48] is [20130926120000]
+20151125 17:12:48.561 Value at [49] is [0$0$0$0$0$0$]
+20151125 17:12:48.562 Value at [50] is [010]
+20151125 17:12:48.563 Value at [51] is [5$0$2$3$0$0$]
+20151125 17:12:48.564 Value at [52] is [0$0$0$0$0$0$]
+20151125 17:12:48.565 Value at [53] is []
+20151125 17:12:48.565 Value at [54] is []
+20151125 17:12:48.566 Value at [55] is []
+20151125 17:12:48.566 Value at [56] is []
+20151125 17:12:48.567 Value at [57] is []
+20151125 17:12:48.886 e=java.sql.SQLSyntaxErrorException: ORA-00913: too many values
+
+20151125 17:12:48.886 ,errorcode=913
+20151125 17:12:48.887 ,getMessage=ORA-00913: too many values
+
+20151125 17:12:48.887 ,Exception=java.sql.SQLSyntaxErrorException: ORA-00913: too many values
+
+20151125 17:12:48.954 e=java.sql.SQLException: ORA-12899: value too large for column "FEEL"."T_TML_LOADCASH"."C_CURRENCY" (actual: 5, maximum: 3)
+
+20151125 17:12:48.955 ,errorcode=12899
+20151125 17:12:48.956 ,getMessage=ORA-12899: value too large for column "FEEL"."T_TML_LOADCASH"."C_CURRENCY" (actual: 5, maximum: 3)
+
+20151125 17:12:48.956 ,Exception=java.sql.SQLException: ORA-12899: value too large for column "FEEL"."T_TML_LOADCASH"."C_CURRENCY" (actual: 5, maximum: 3)
+
