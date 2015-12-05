@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="gbk"?>
+<item>
+<prid value ="clog">
+	<keyword select ="log">
+		<class option="ccaslog">path</class>
+	</keyword>
+</prid>
+
+<prid value ="ccasserver">
+	<keyword select ="host">
+		<class option="127.0.0.1">ip</class>
+		<class option="5041">port</class>
+	</keyword>
+	<keyword select ="iflex">
+		<class option="10.1.3.66">ip</class>
+		<class option="5041">port</class>
+	</keyword>
+	<keyword select ="hsm">
+		<class option="10.1.3.66">ip</class>
+		<class option="9090">port</class>
+	</keyword>
+	<keyword select ="deskey">
+		<class option="WWW00">tsus</class>
+		<class option="983D7E1C9A484FB6">comkey</class>
+		<class option="1AD84E6B3C8BA6E9">pinkey</class>
+		<class option="bs">frame</class>
+	</keyword>
+</prid>
+</item>
+
+
+
+
+
+
+

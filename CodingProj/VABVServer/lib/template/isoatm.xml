@@ -1,0 +1,31 @@
+<?xml version="1.0" standalone="yes"?>
+<transaction> 
+<tMsg>
+	<tMsg_field table="tMsg" Channel="10">
+		<m_acMsgType>0200</m_acMsgType>
+		<m_acMsgCode>100000</m_acMsgCode>
+		<m_iTxnId>101</m_iTxnId>
+		<m_iChannelType>10</m_iChannelType>
+		<m_iReqResp>0</m_iReqResp>
+		<m_iStartEnd>0</m_iStartEnd>
+		<m_iMsgId>100101</m_iMsgId>
+		<m_iInterMsgId>-1</m_iInterMsgId>
+		<m_iPackFlag>0</m_iPackFlag>
+		<m_iComment>REQ</m_iComment>
+	</tMsg_field>
+	<tMsg_field table="tMsg" Channel="10">
+		<m_acMsgType>-1</m_acMsgType>
+		<m_acMsgCode>-1</m_acMsgCode>
+		<m_iTxnId>101</m_iTxnId>
+		<m_iChannelType>10</m_iChannelType>
+		<m_iReqResp>1</m_iReqResp>
+		<m_iStartEnd>1</m_iStartEnd>
+		<m_iMsgId>101101</m_iMsgId>
+		<m_iInterMsgId>101101</m_iInterMsgId>
+		<m_iPackFlag>1</m_iPackFlag>
+		<m_iComment>RES</m_iComment>
+	</tMsg_field>
+</tMsg>
+ <tMsgState>
+ </tMsgState>
+</transaction> 

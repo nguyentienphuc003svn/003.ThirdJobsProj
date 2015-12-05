@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="gbk"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+
+	<bean id="jotm" class="org.springframework.transaction.jta.JotmFactoryBean"/>
+
+<!--
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DataSourceUtils" factory-method="getDataSourceFromJndi">
+		<constructor-arg><value>jdbc/mydb</value></constructor-arg>
+	</bean>
+
+-->
+
+	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName">
+			<value>java:comp/env/jdbc/mydb</value>
+		</property>
+	</bean>
+<!--//以下采用JNDI方式
+	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName">
+			<value>java:comp/env/jdbc/mydb</value>
+		</property>
+	</bean>
+
+	<bean id="transactionManager" class="org.springframework.transaction.jta.JtaTransactionManager">
+		<property name="userTransaction"><ref local="jotm"/></property>
+	</bean>
+
+	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName">
+			<value>java:comp/env/jdbc/mydb</value>
+		</property>
+	</bean>
+-->
+
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource"><ref local="dataSource"/></property>
+	</bean>
+
+<!--//以下采用JDBC方式
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" destroy-method="close">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+		<property name="url" value="jdbc:mysql://192.168.1.7:3306/obts"/>
+		<property name="username" value="root"/>
+		<property name="password" value="root"/>
+	</bean>
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" destroy-method="close">
+		<property name="driverClassName" value="com.informix.jdbc.IfxDriver"/>
+		<property name="url" value="jdbc:informix-sqli://192.168.1.6:5050/obts:INFORMIXSERVER=obts"/>
+		<property name="username" value="informix"/>
+		<property name="password" value="informix"/>
+	</bean>
+
+
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource"><ref local="dataSource"/></property>
+	</bean>
+-->
+
+<!--//以下采用JOTM方式
+
+	<bean id="innerDataSource" class="org.enhydra.jdbc.standard.StandardXADataSource" destroy-method="shutdown">
+		<property name="transactionManager"><ref local="jotm"/></property>
+		<property name="driverName"><value>com.informix.jdbc.IfxDriver</value></property>
+		<property name="url"><value>jdbc:informix-sqli://192.168.1.6:5050/obts:INFORMIXSERVER=obts</value></property>
+
+	</bean>
+
+	<bean id="dataSource" class="org.enhydra.jdbc.pool.StandardXAPoolDataSource" destroy-method="shutdown">
+		<property name="dataSource"><ref local="innerDataSource"/></property>
+		<property name="transactionManager"><ref local="jotm"/></property>
+		<property name="user"><value>informix</value></property>
+		<property name="password"><value>informix</value></property>
+		<property name="maxSize"><value>10</value></property>
+	</bean>
+
+	<bean id="transactionManager" class="org.springframework.transaction.jta.JtaTransactionManager">
+		<property name="userTransaction"><ref local="jotm"/></property>
+	</bean>
+
+-->
+
+
+
+<!--
+	<bean id="transactionManager"
+			class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+			class="org.springframework.transaction.jta.JtaTransactionManager"/>
+-->
+<!--
+	<bean id="myB001" parent="obts">
+		<property name="target">
+			<bean class="obts.MyB001Bean">
+				<property name="dataSource"><ref bean="dataSource"/></property>
+			</bean>
+		</property>
+	</bean>
+-->
+
+	<bean id="myObtsBean" class="obts.core.MyObtsBean" scope="prototype">
+		<property name="dataSource"><ref bean="dataSource"/></property>
+		<property name="transactionManager"><ref bean="transactionManager"/></property>
+	</bean>
+
+<!--
+	<bean id="myB001Bean" class="obts.MyB001Bean">
+		<property name="dataSource"><ref bean="dataSource"/></property>
+	</bean>
+
+	<bean id="b001"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager"><ref bean="transactionManager"/></property>
+		<property name="target"><ref bean="myB001Bean"/></property>
+		<property name="transactionAttributes">
+			<props>
+					<prop key="init*">PROPAGATION_REQUIRED,readOnly</prop>
+					<prop key="set*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+-->
+
+<!--
+	<bean id="obtsBean" abstract="true"
+-->
+	<bean id="obtsBean"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean" scope="prototype">
+		<property name="transactionManager"><ref bean="transactionManager"/></property>
+		<property name="target"><ref bean="myObtsBean"/></property>
+		<property name="transactionAttributes">
+			<props>
+					<prop key="111*">PROPAGATION_REQUIRED,-Exception</prop>
+					<prop key="11get*">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+<!--
+		<property name="target"><ref bean="myObtsBean"/></property>
+		<property name="proxyTargetClass"><value>true</value></property>
+-->
+	</bean>
+
+</beans>

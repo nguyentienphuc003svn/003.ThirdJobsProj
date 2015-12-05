@@ -1,0 +1,24 @@
+@echo off
+@set JAVA_HOME=D:\JAVA\jdk1.6.0_01
+@set JAVA_RUN=D:\JAVA\jdk1.6.0_01
+@rem set CLASSPATH=D:\JAVA\Tomcat 6.0\lib;.;%CLASSPATH%
+@set CURRENT_DIR=D:\JAVA\Tomcat 6.0\lib
+d:
+@cd %CURRENT_DIR%
+
+@copy ApplicationResources.properties ApplicationResources_en.properties
+@"%JAVA_RUN%\bin\native2ascii.exe" ApplicationResources_zh.txt ApplicationResources_zh.properties
+@rem "%JAVA_RUN%\bin\native2ascii.exe" -reverse -encoding Cp1258 ApplicationResources_vi.properties ApplicationResources_vi.txt
+@rem "%JAVA_RUN%\bin\native2ascii.exe" -reverse ApplicationResources_vi.properties ApplicationResources_vi.txt
+@dir ApplicationResources*.*
+set SERVICE_NAME=tomcat6
+set CATALINA_HOME=D:\Tomcat 6.0
+net stop  %SERVICE_NAME%
+@if exist "%CATALINA_HOME%\work" rd /q /s "%CATALINA_HOME%\work"
+@if exist "%CATALINA_HOME%\logs\*.log" del "%CATALINA_HOME%\logs\*.log"
+net start %SERVICE_NAME%
+if not errorlevel 1 echo ------service %SERVICE_NAME% already startup------
+java -classpath "%CATALINA_HOME%\lib\catalina.jar" org.apache.catalina.util.ServerInfo
+@rem pause
+@choice /t 6 /d y>nul
+exit

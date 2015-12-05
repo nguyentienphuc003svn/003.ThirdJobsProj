@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="lib" path="E:/OnOffStore_V2.0.0/A.ONLINE/trunk2/003.ThirdJobsProj/trunk/CodingProj/VABVServer/lib/iText-2.1.5.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/OnOffStore_V2.0.0/A.ONLINE/trunk2/003.ThirdJobsProj/trunk/CodingProj/VABVServer/lib/iTextAsian.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/OnOffStore_V2.0.0/A.ONLINE/trunk2/003.ThirdJobsProj/trunk/CodingProj/VABVServer/lib/iTextAsianCmaps.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/OnOffStore_V2.0.0/A.ONLINE/trunk2/003.ThirdJobsProj/trunk/CodingProj/VABVServer/lib/rxtx-2.2pre2.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/OnOffStore_V2.0.0/A.ONLINE/trunk2/003.ThirdJobsProj/trunk/CodingProj/VABVServer/lib/spring.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/OnOffStore_V2.0.0/A.ONLINE/trunk2/003.ThirdJobsProj/trunk/CodingProj/VABVServer/lib/dom4j-1.6.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/OnOffStore_V2.0.0/A.ONLINE/trunk2/003.ThirdJobsProj/trunk/CodingProj/VABVServer/lib/jSMSEngine.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/OnOffStore_V2.0.0/A.ONLINE/trunk2/003.ThirdJobsProj/trunk/CodingProj/VABVServer/lib/jSMSServer.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/OnOffStore_V2.0.0/A.ONLINE/trunk2/003.ThirdJobsProj/trunk/CodingProj/VABVServer/lib/jsp-api.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/OnOffStore_V2.0.0/A.ONLINE/trunk2/003.ThirdJobsProj/trunk/CodingProj/VABVServer/lib/jstl.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/OnOffStore_V2.0.0/A.ONLINE/trunk2/003.ThirdJobsProj/trunk/CodingProj/VABVServer/lib/jta.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/OnOffStore_V2.0.0/A.ONLINE/trunk2/003.ThirdJobsProj/trunk/CodingProj/VABVServer/lib/jta-spec1_0_1.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/OnOffStore_V2.0.0/A.ONLINE/trunk2/003.ThirdJobsProj/trunk/CodingProj/VABVServer/lib/servlet-api.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/OnOffStore_V2.0.0/A.ONLINE/trunk2/003.ThirdJobsProj/trunk/CodingProj/VABVServer/lib/poi-3.2-FINAL-20081019.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/OnOffStore_V2.0.0/A.ONLINE/trunk2/003.ThirdJobsProj/trunk/CodingProj/VABVServer/lib/activation.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/OnOffStore_V2.0.0/A.ONLINE/trunk2/003.ThirdJobsProj/trunk/CodingProj/VABVServer/lib/annotations-api.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/OnOffStore_V2.0.0/A.ONLINE/trunk2/003.ThirdJobsProj/trunk/CodingProj/VABVServer/lib/Common.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/OnOffStore_V2.0.0/A.ONLINE/trunk2/003.ThirdJobsProj/trunk/CodingProj/VABVServer/lib/commons-attributes-api.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/OnOffStore_V2.0.0/A.ONLINE/trunk2/003.ThirdJobsProj/trunk/CodingProj/VABVServer/lib/commons-attributes-compiler.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/OnOffStore_V2.0.0/A.ONLINE/trunk2/003.ThirdJobsProj/trunk/CodingProj/VABVServer/lib/commons-beanutils.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/OnOffStore_V2.0.0/A.ONLINE/trunk2/003.ThirdJobsProj/trunk/CodingProj/VABVServer/lib/commons-cli-1.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/OnOffStore_V2.0.0/A.ONLINE/trunk2/003.ThirdJobsProj/trunk/CodingProj/VABVServer/lib/commons-codec.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/OnOffStore_V2.0.0/A.ONLINE/trunk2/003.ThirdJobsProj/trunk/CodingProj/VABVServer/lib/commons-collections.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/OnOffStore_V2.0.0/A.ONLINE/trunk2/003.ThirdJobsProj/trunk/CodingProj/VABVServer/lib/commons-dbcp-1.2.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/OnOffStore_V2.0.0/A.ONLINE/trunk2/003.ThirdJobsProj/trunk/CodingProj/VABVServer/lib/commons-digester.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/OnOffStore_V2.0.0/A.ONLINE/trunk2/003.ThirdJobsProj/trunk/CodingProj/VABVServer/lib/commons-discovery.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/OnOffStore_V2.0.0/A.ONLINE/trunk2/003.ThirdJobsProj/trunk/CodingProj/VABVServer/lib/commons-email-1.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/OnOffStore_V2.0.0/A.ONLINE/trunk2/003.ThirdJobsProj/trunk/CodingProj/VABVServer/lib/commons-fileupload-1.2.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/OnOffStore_V2.0.0/A.ONLINE/trunk2/003.ThirdJobsProj/trunk/CodingProj/VABVServer/lib/commons-httpclient.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/OnOffStore_V2.0.0/A.ONLINE/trunk2/003.ThirdJobsProj/trunk/CodingProj/VABVServer/lib/commons-io-1.3.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/OnOffStore_V2.0.0/A.ONLINE/trunk2/003.ThirdJobsProj/trunk/CodingProj/VABVServer/lib/commons-lang-2.4.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/OnOffStore_V2.0.0/A.ONLINE/trunk2/003.ThirdJobsProj/trunk/CodingProj/VABVServer/lib/commons-logging.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/OnOffStore_V2.0.0/A.ONLINE/trunk2/003.ThirdJobsProj/trunk/CodingProj/VABVServer/lib/commons-net-1.4.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/OnOffStore_V2.0.0/A.ONLINE/trunk2/003.ThirdJobsProj/trunk/CodingProj/VABVServer/lib/commons-pool-1.5.4.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/OnOffStore_V2.0.0/A.ONLINE/trunk2/003.ThirdJobsProj/trunk/CodingProj/VABVServer/lib/commons-validator.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/OnOffStore_V2.0.0/A.ONLINE/trunk2/003.ThirdJobsProj/trunk/CodingProj/VABVServer/lib/mail.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/OnOffStore_V2.0.0/A.ONLINE/trunk2/003.ThirdJobsProj/trunk/CodingProj/VABVServer/lib/mailapi.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/OnOffStore_V2.0.0/A.ONLINE/trunk2/003.ThirdJobsProj/trunk/CodingProj/VABVServer/lib/proxool-0.9.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/OnOffStore_V2.0.0/A.ONLINE/trunk2/003.ThirdJobsProj/trunk/CodingProj/VABVServer/lib/proxool-cglib.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/OnOffStore_V2.0.0/A.ONLINE/trunk2/003.ThirdJobsProj/trunk/CodingProj/VABVServer/lib/ojdbc6.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/OnOffStore_V2.0.0/A.ONLINE/trunk2/003.ThirdJobsProj/trunk/CodingProj/VABVServer/lib/oracle_jdbc.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/OnOffStore_V2.0.0/A.ONLINE/trunk2/003.ThirdJobsProj/trunk/CodingProj/VABVServer/lib/oracle10g.jar"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
