@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	<bean id="dataSource" class="org.logicalcobwebs.proxool.ProxoolDataSource" destroy-method="close">
+		<property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
+		<property name="driverUrl" value="jdbc:oracle:thin:@192.168.11.170:1521:feel"/>
+		<property name="user" value="feel"/>
+		<property name="password" value="50F92C854FB1DB3E"/>
+		<property name="alias" value="feel"/>
+		<!-- proxool 自动侦察各个连接状态的时间间隔(毫秒),侦察到空闲的连接就马上回收,超时的销毁(默认30秒),0.9.1暂时不能设置
+		<property name="houseKeepingSleepTime" value="90000"/>-->
+		<!-- 最少保持的空闲连接数 (默认5个)-->
+		<property name="prototypeCount" value="6"/>
+		<!-- 最大连接数 (默认15个)-->
+		<property name="maximumConnectionCount" value="300"/>
+		<!-- 最小连接数 (默认5个) -->
+		<property name="minimumConnectionCount" value="20"/>
+		<property name="trace" value="true"/>
+		<property name="verbose" value="true"/>
+	</bean>
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource"><ref local="dataSource"/></property>
+	</bean>
+
+	
+	
+	<bean id="myObtsBean" class="obts.core.MyObtsBean" >
+		<property name="dataSource"><ref bean="dataSource"/></property>
+		<property name="transactionManager"><ref bean="transactionManager"/></property>
+	</bean>
+<!--
+	<bean id="obtsBean" abstract="true"
+-->
+	<bean id="obtsBean"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager"><ref bean="transactionManager"/></property>
+		<property name="target"><ref bean="myObtsBean"/></property>
+		<property name="transactionAttributes">
+			<props>
+					<prop key="111*">PROPAGATION_REQUIRED,-Exception</prop>
+					<prop key="11get*">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+<!--
+		<property name="target"><ref bean="myObtsBean"/></property>
+		<property name="proxyTargetClass"><value>true</value></property>
+-->
+	</bean>
+</beans>
