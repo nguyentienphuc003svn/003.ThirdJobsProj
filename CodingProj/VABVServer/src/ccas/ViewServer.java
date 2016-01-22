@@ -515,7 +515,8 @@ class ViewTransParser implements Runnable {
 				if (!rubbish.equals("3")) {
 					a = a + 1;
 				}
-				if (!rubbish.equals("3")) {
+				if (!rubbish.equals("3")) 
+				{
 					String sql = "update T_TML_CASHBOX set I_DENO='"
 							+ mypackBuf[42].split("\\$")[j]
 									+ "',C_NOTETYPE='"
@@ -526,6 +527,7 @@ class ViewTransParser implements Runnable {
 													+ mypackBuf[40].split("\\$")[j] + "'";
 					sql = sql + ",I_LOADING='"
 							+ mypackBuf[44].split("\\$")[j] + "'";
+					
 					/*if (mypackBuf.length >= 54) {
 						sql = sql + ",I_REJECT='"
 								+ mypackBuf[51].split("\\$")[j]
@@ -534,6 +536,7 @@ class ViewTransParser implements Runnable {
 								+ "'";
 					} else
 					 */
+					
 					{
 						sql = sql + ",I_REJECT='0',I_RETRACT='0'";
 					}
