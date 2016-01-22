@@ -1,0 +1,599 @@
+#
+# An unexpected error has been detected by Java Runtime Environment:
+#
+#  SIGBUS (0x7) at pc=0xf760bc53, pid=27545, tid=3469142896
+#
+# Java VM: Java HotSpot(TM) Server VM (11.3-b02 mixed mode linux-x86)
+# Problematic frame:
+# C  [libzip.so+0xbc53]
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0xd12a0400):  JavaThread "http-8443-16" daemon [_thread_in_native, id=27880, stack(0xcec1e000,0xcec6f000)]
+
+siginfo:si_signo=SIGBUS: si_errno=0, si_code=2 (BUS_ADRERR), si_addr=0xd004569e
+
+Registers:
+EAX=0xcff8b4f0, EBX=0xf76107bc, ECX=0xd0044000, EDX=0x0003f000
+ESP=0xcec6c728, EBP=0xcec6c750, ESI=0xd0045681, EDI=0xcf347ca8
+EIP=0xf760bc53, CR2=0xd004569e, EFLAGS=0x00010286
+
+Top of Stack: (sp=0xcec6c728)
+0xcec6c728:   00000030 d12a09b0 d12a09b8 d12a0da4
+0xcec6c738:   cff8b5b8 cff8b5b8 f760bc0b f76107bc
+0xcec6c748:   cff8b770 00000000 cec6c780 f760c00b
+0xcec6c758:   cff8b4f0 cff8b770 00000000 066aeb60
+0xcec6c768:   d12a0400 f47a0f58 ccba8a0e f76107bc
+0xcec6c778:   cec6c7c8 d12a0514 cec6cbf0 f76031f9
+0xcec6c788:   cff8b4f0 cec6c7c8 0000000e 0000000e
+0xcec6c798:   cec6c7c8 00000001 d12a0400 d1290488 
+
+Instructions: (pc=0xf760bc53)
+0xf760bc43:   8b 70 04 8b 45 08 8b 48 10 8b 50 1c 01 ce 29 d6
+0xf760bc53:   0f b6 46 1d 0f b6 56 1c c1 e0 08 09 c2 89 55 f0 
+
+Stack: [0xcec1e000,0xcec6f000],  sp=0xcec6c728,  free space=313k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libzip.so+0xbc53]
+C  [libzip.so+0xc00b]  ZIP_GetEntry+0x10b
+C  [libzip.so+0x31f9]  Java_java_util_zip_ZipFile_getEntry+0xc9
+J  java.util.zip.ZipFile.getEntry(JLjava/lang/String;Z)J
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+J  java.util.zip.ZipFile.getEntry(JLjava/lang/String;Z)J
+J  java.util.jar.JarFile.getEntry(Ljava/lang/String;)Ljava/util/zip/ZipEntry;
+J  sun.misc.URLClassPath$JarLoader.getResource(Ljava/lang/String;Z)Lsun/misc/Resource;
+J  sun.misc.URLClassPath.findResource(Ljava/lang/String;Z)Ljava/net/URL;
+j  java.net.URLClassLoader$2.run()Ljava/lang/Object;+12
+v  ~StubRoutines::call_stub
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+0
+j  java.net.URLClassLoader.findResource(Ljava/lang/String;)Ljava/net/URL;+13
+j  java.lang.ClassLoader.getResource(Ljava/lang/String;)Ljava/net/URL;+30
+j  java.lang.ClassLoader.getResourceAsStream(Ljava/lang/String;)Ljava/io/InputStream;+2
+j  org.apache.catalina.loader.WebappClassLoader.getResourceAsStream(Ljava/lang/String;)Ljava/io/InputStream;+326
+j  org.apache.jasper.servlet.JasperLoader.getResourceAsStream(Ljava/lang/String;)Ljava/io/InputStream;+5
+j  org.apache.jasper.compiler.JDTCompiler$1.findType(Ljava/lang/String;)Lorg/eclipse/jdt/internal/compiler/env/NameEnvironmentAnswer;+79
+j  org.apache.jasper.compiler.JDTCompiler$1.findType([C[[C)Lorg/eclipse/jdt/internal/compiler/env/NameEnvironmentAnswer;+124
+j  org.eclipse.jdt.internal.compiler.lookup.LookupEnvironment.askForType(Lorg/eclipse/jdt/internal/compiler/lookup/PackageBinding;[C)Lorg/eclipse/jdt/internal/compiler/lookup/ReferenceBinding;+27
+j  org.eclipse.jdt.internal.compiler.lookup.PackageBinding.getType([C)Lorg/eclipse/jdt/internal/compiler/lookup/ReferenceBinding;+16
+j  org.eclipse.jdt.internal.compiler.lookup.Scope.findType([CLorg/eclipse/jdt/internal/compiler/lookup/PackageBinding;Lorg/eclipse/jdt/internal/compiler/lookup/PackageBinding;)Lorg/eclipse/jdt/internal/compiler/lookup/ReferenceBinding;+14
+j  org.eclipse.jdt.internal.compiler.lookup.Scope.getTypeOrPackage([CI)Lorg/eclipse/jdt/internal/compiler/lookup/Binding;+1017
+j  org.eclipse.jdt.internal.compiler.lookup.Scope.getType([C)Lorg/eclipse/jdt/internal/compiler/lookup/TypeBinding;+14
+j  org.eclipse.jdt.internal.compiler.ast.SingleTypeReference.getTypeBinding(Lorg/eclipse/jdt/internal/compiler/lookup/Scope;)Lorg/eclipse/jdt/internal/compiler/lookup/TypeBinding;+18
+j  org.eclipse.jdt.internal.compiler.ast.TypeReference.resolveType(Lorg/eclipse/jdt/internal/compiler/lookup/BlockScope;Z)Lorg/eclipse/jdt/internal/compiler/lookup/TypeBinding;+36
+j  org.eclipse.jdt.internal.compiler.lookup.SourceTypeBinding.resolveTypesFor(Lorg/eclipse/jdt/internal/compiler/lookup/MethodBinding;)Lorg/eclipse/jdt/internal/compiler/lookup/MethodBinding;+410
+j  org.eclipse.jdt.internal.compiler.lookup.SourceTypeBinding.methods()[Lorg/eclipse/jdt/internal/compiler/lookup/MethodBinding;+89
+j  org.eclipse.jdt.internal.compiler.lookup.SourceTypeBinding.faultInTypesForFieldsAndMethods()V+46
+j  org.eclipse.jdt.internal.compiler.lookup.CompilationUnitScope.faultInTypes()V+21
+j  org.eclipse.jdt.internal.compiler.Compiler.process(Lorg/eclipse/jdt/internal/compiler/ast/CompilationUnitDeclaration;I)V+27
+j  org.eclipse.jdt.internal.compiler.Compiler.compile([Lorg/eclipse/jdt/internal/compiler/env/ICompilationUnit;)V+110
+j  org.apache.jasper.compiler.JDTCompiler.generateClass([Ljava/lang/String;)V+961
+j  org.apache.jasper.compiler.Compiler.compile(ZZ)V+30
+j  org.apache.jasper.compiler.Compiler.compile(Z)V+3
+j  org.apache.jasper.compiler.Compiler.compile()V+2
+j  org.apache.jasper.JspCompilationContext.compile()V+50
+j  org.apache.jasper.servlet.JspServletWrapper.service(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;Z)V+118
+j  org.apache.jasper.servlet.JspServlet.serviceJspFile(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;Ljava/lang/String;Ljava/lang/Throwable;Z)V+126
+j  org.apache.jasper.servlet.JspServlet.service(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V+347
+j  javax.servlet.http.HttpServlet.service(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V+30
+j  org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V+376
+J  ccas.CharacterFilter.doFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;Ljavax/servlet/FilterChain;)V
+j  org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V+119
+j  org.apache.catalina.core.ApplicationFilterChain.doFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V+101
+j  org.apache.catalina.core.StandardWrapperValve.invoke(Lorg/apache/catalina/connector/Request;Lorg/apache/catalina/connector/Response;)V+804
+j  org.apache.catalina.core.StandardContextValve.invoke(Lorg/apache/catalina/connector/Request;Lorg/apache/catalina/connector/Response;)V+365
+j  org.apache.catalina.authenticator.AuthenticatorBase.invoke(Lorg/apache/catalina/connector/Request;Lorg/apache/catalina/connector/Response;)V+675
+j  org.apache.catalina.core.StandardHostValve.invoke(Lorg/apache/catalina/connector/Request;Lorg/apache/catalina/connector/Response;)V+64
+j  org.apache.catalina.valves.ErrorReportValve.invoke(Lorg/apache/catalina/connector/Request;Lorg/apache/catalina/connector/Response;)V+6
+j  org.apache.catalina.core.StandardEngineValve.invoke(Lorg/apache/catalina/connector/Request;Lorg/apache/catalina/connector/Response;)V+42
+j  org.apache.catalina.connector.CoyoteAdapter.service(Lorg/apache/coyote/Request;Lorg/apache/coyote/Response;)V+158
+j  org.apache.coyote.http11.Http11Processor.process(Ljava/net/Socket;)V+468
+j  org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Ljava/net/Socket;)Z+82
+j  org.apache.tomcat.util.net.JIoEndpoint$Worker.run()V+41
+j  java.lang.Thread.run()V+11
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+=>0xd12a0400 JavaThread "http-8443-16" daemon [_thread_in_native, id=27880, stack(0xcec1e000,0xcec6f000)]
+  0xd129f800 JavaThread "http-8443-15" daemon [_thread_in_native, id=27879, stack(0xcec6f000,0xcecc0000)]
+  0xd12a2c00 JavaThread "http-8443-14" daemon [_thread_blocked, id=27878, stack(0xced0d000,0xced5e000)]
+  0xd12a1c00 JavaThread "http-8443-13" daemon [_thread_in_native, id=27877, stack(0xced5e000,0xcedaf000)]
+  0xd1289800 JavaThread "http-8443-12" daemon [_thread_in_native, id=27876, stack(0xcedaf000,0xcee00000)]
+  0xd1288c00 JavaThread "http-8443-11" daemon [_thread_blocked, id=27875, stack(0xcef3b000,0xcef8c000)]
+  0xd127c000 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=27644, stack(0xcef8c000,0xcefdd000)]
+  0xd127e000 JavaThread "http-8443-10" daemon [_thread_blocked, id=27638, stack(0xcf11a000,0xcf16b000)]
+  0xd1254c00 JavaThread "http-8443-9" daemon [_thread_in_native, id=27637, stack(0xcf16b000,0xcf1bc000)]
+  0xd120d000 JavaThread "http-8443-8" daemon [_thread_blocked, id=27636, stack(0xcf1bc000,0xcf20d000)]
+  0xd1226c00 JavaThread "http-8443-7" daemon [_thread_in_native, id=27635, stack(0xcf20d000,0xcf25e000)]
+  0xd1243400 JavaThread "http-8443-6" daemon [_thread_in_native, id=27634, stack(0xcf25e000,0xcf2af000)]
+  0xd1229000 JavaThread "http-8443-5" daemon [_thread_blocked, id=27633, stack(0xcf427000,0xcf478000)]
+  0xd1243c00 JavaThread "http-8443-4" daemon [_thread_in_native, id=27632, stack(0xcf2af000,0xcf300000)]
+  0xcfdfb800 JavaThread "Prototyper" daemon [_thread_blocked, id=27617, stack(0xcf478000,0xcf4c9000)]
+  0xd1251400 JavaThread "HouseKeeper" daemon [_thread_blocked, id=27616, stack(0xcf4c9000,0xcf51a000)]
+  0xd120b800 JavaThread "http-8443-3" daemon [_thread_blocked, id=27615, stack(0xcf51a000,0xcf56b000)]
+  0xd120a800 JavaThread "http-8443-2" daemon [_thread_in_native, id=27614, stack(0xcf56b000,0xcf5bc000)]
+  0xd1207c00 JavaThread "http-8443-1" daemon [_thread_blocked, id=27613, stack(0xcf5bc000,0xcf60d000)]
+  0xcfdfac00 JavaThread "TP-Monitor" daemon [_thread_blocked, id=27601, stack(0xcf60d000,0xcf65e000)]
+  0xcfdb2800 JavaThread "TP-Processor4" daemon [_thread_in_native, id=27600, stack(0xcf65e000,0xcf6af000)]
+  0xcfffa800 JavaThread "TP-Processor3" daemon [_thread_blocked, id=27599, stack(0xcf6af000,0xcf700000)]
+  0xcfde1800 JavaThread "TP-Processor2" daemon [_thread_blocked, id=27598, stack(0xcf80d000,0xcf85e000)]
+  0xcfd81c00 JavaThread "TP-Processor1" daemon [_thread_blocked, id=27597, stack(0xcf85e000,0xcf8af000)]
+  0xcffe3800 JavaThread "http-8443-Acceptor-0" daemon [_thread_in_native, id=27596, stack(0xcf8af000,0xcf900000)]
+  0xcfd9bc00 JavaThread "http-8080-Acceptor-0" daemon [_thread_in_native, id=27595, stack(0xcfa3a000,0xcfa8b000)]
+  0xcfdbd000 JavaThread "ContainerBackgroundProcessor[StandardEngine[Catalina]]" daemon [_thread_blocked, id=27594, stack(0xcfa8b000,0xcfadc000)]
+  0xf759fc00 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=27555, stack(0xd08a4000,0xd08f5000)]
+  0xf759dc00 JavaThread "CompilerThread1" daemon [_thread_blocked, id=27554, stack(0xd08f5000,0xd0976000)]
+  0xf759c000 JavaThread "CompilerThread0" daemon [_thread_blocked, id=27553, stack(0xd0976000,0xd09f7000)]
+  0xf759a800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=27552, stack(0xd09f7000,0xd0a48000)]
+  0xf758a800 JavaThread "Finalizer" daemon [_thread_blocked, id=27551, stack(0xd112e000,0xd117f000)]
+  0xf7589400 JavaThread "Reference Handler" daemon [_thread_blocked, id=27550, stack(0xd0d9c000,0xd0ded000)]
+  0xf7504c00 JavaThread "main" [_thread_in_native, id=27546, stack(0xf7652000,0xf76a3000)]
+
+Other Threads:
+  0xf7585c00 VMThread [stack: 0xd0ded000,0xd0e6e000] [id=27549]
+  0xf75a1800 WatcherThread [stack: 0xd0823000,0xd08a4000] [id=27556]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ PSYoungGen      total 11008K, used 3781K [0xf0d30000, 0xf1b60000, 0xf4410000)
+  eden space 9728K, 27% used [0xf0d30000,0xf0fd7d28,0xf16b0000)
+  from space 1280K, 83% used [0xf16b0000,0xf17b9a90,0xf17f0000)
+  to   space 1408K, 0% used [0xf1a00000,0xf1a00000,0xf1b60000)
+ PSOldGen        total 50496K, used 49446K [0xd5610000, 0xd8760000, 0xf0d30000)
+  object space 50496K, 97% used [0xd5610000,0xd8659838,0xd8760000)
+ PSPermGen       total 45952K, used 29035K [0xd1610000, 0xd42f0000, 0xd5610000)
+  object space 45952K, 63% used [0xd1610000,0xd326ad68,0xd42f0000)
+
+Dynamic libraries:
+00b27000-00b45000 r-xp 00000000 08:02 527924                             /lib/ld-2.12.so
+00b45000-00b46000 r-xp 0001d000 08:02 527924                             /lib/ld-2.12.so
+00b46000-00b47000 rwxp 0001e000 08:02 527924                             /lib/ld-2.12.so
+00b49000-00cd5000 r-xp 00000000 08:02 527860                             /lib/libc-2.12.so
+00cd5000-00cd7000 r-xp 0018c000 08:02 527860                             /lib/libc-2.12.so
+00cd7000-00cd8000 rwxp 0018e000 08:02 527860                             /lib/libc-2.12.so
+00cd8000-00cdb000 rwxp 00000000 00:00 0 
+06000000-06676000 r-xp 00000000 08:02 3674577                            /home/feel/console/jdk1.6.0_13/jre/lib/i386/server/libjvm.so
+06676000-066bb000 rwxp 00675000 08:02 3674577                            /home/feel/console/jdk1.6.0_13/jre/lib/i386/server/libjvm.so
+066bb000-06add000 rwxp 00000000 00:00 0 
+08048000-08052000 r-xp 00000000 08:02 2496263                            /home/feel/console/jdk1.6.0_13/bin/java
+08052000-08053000 rwxp 00009000 08:02 2496263                            /home/feel/console/jdk1.6.0_13/bin/java
+08d32000-0998e000 rwxp 00000000 00:00 0                                  [heap]
+cb400000-cb4f2000 rwxp 00000000 00:00 0 
+cb4f2000-cb500000 ---p 00000000 00:00 0 
+cb500000-cb549000 rwxp 00000000 00:00 0 
+cb549000-cb600000 ---p 00000000 00:00 0 
+cb600000-cb7fa000 rwxp 00000000 00:00 0 
+cb7fa000-cb800000 ---p 00000000 00:00 0 
+cb800000-cb8e0000 rwxp 00000000 00:00 0 
+cb8e0000-cb900000 ---p 00000000 00:00 0 
+cb900000-cb9fb000 rwxp 00000000 00:00 0 
+cb9fb000-cba00000 ---p 00000000 00:00 0 
+cba00000-cbc00000 rwxp 00000000 00:00 0 
+cbc00000-cbd00000 rwxp 00000000 00:00 0 
+cbf00000-cc100000 rwxp 00000000 00:00 0 
+cc100000-cc300000 rwxp 00000000 00:00 0 
+cc300000-cc500000 rwxp 00000000 00:00 0 
+cc500000-cc700000 rwxp 00000000 00:00 0 
+cc700000-cc900000 rwxp 00000000 00:00 0 
+cc900000-ccb00000 rwxp 00000000 00:00 0 
+ccb00000-ccd00000 rwxp 00000000 00:00 0 
+ccd00000-cce00000 rwxp 00000000 00:00 0 
+cd100000-cd1fd000 rwxp 00000000 00:00 0 
+cd1fd000-cd200000 ---p 00000000 00:00 0 
+cd200000-cd2fe000 rwxp 00000000 00:00 0 
+cd2fe000-cd300000 ---p 00000000 00:00 0 
+cd300000-cd500000 rwxp 00000000 00:00 0 
+cd500000-cd5fb000 rwxp 00000000 00:00 0 
+cd5fb000-cd600000 ---p 00000000 00:00 0 
+cd600000-cd700000 rwxp 00000000 00:00 0 
+cd700000-cd900000 rwxp 00000000 00:00 0 
+cd900000-cdb00000 rwxp 00000000 00:00 0 
+cdb00000-cdc00000 rwxp 00000000 00:00 0 
+cdd00000-cddfb000 rwxp 00000000 00:00 0 
+cddfb000-cde00000 ---p 00000000 00:00 0 
+cde00000-ce000000 rwxp 00000000 00:00 0 
+ce000000-ce0d6000 rwxp 00000000 00:00 0 
+ce0d6000-ce100000 ---p 00000000 00:00 0 
+ce200000-ce297000 rwxp 00000000 00:00 0 
+ce297000-ce300000 ---p 00000000 00:00 0 
+ce400000-ce4f0000 rwxp 00000000 00:00 0 
+ce4f0000-ce500000 ---p 00000000 00:00 0 
+ce500000-ce5f1000 rwxp 00000000 00:00 0 
+ce5f1000-ce600000 ---p 00000000 00:00 0 
+ce600000-ce6fe000 rwxp 00000000 00:00 0 
+ce6fe000-ce700000 ---p 00000000 00:00 0 
+ce700000-ce7fb000 rwxp 00000000 00:00 0 
+ce7fb000-ce800000 ---p 00000000 00:00 0 
+ce800000-ce8fc000 rwxp 00000000 00:00 0 
+ce8fc000-ce900000 ---p 00000000 00:00 0 
+ce900000-ce9fa000 rwxp 00000000 00:00 0 
+ce9fa000-cea00000 ---p 00000000 00:00 0 
+ceb00000-cebfd000 rwxp 00000000 00:00 0 
+cebfd000-cec00000 ---p 00000000 00:00 0 
+cec1e000-cec21000 ---p 00000000 00:00 0 
+cec21000-cec6f000 rwxp 00000000 00:00 0 
+cec6f000-cec72000 ---p 00000000 00:00 0 
+cec72000-cecc0000 rwxp 00000000 00:00 0 
+cecc0000-cecee000 r-xp 00000000 08:02 3674538                            /home/feel/console/jdk1.6.0_13/jre/lib/i386/libjpeg.so
+cecee000-cecef000 rwxp 0002e000 08:02 3674538                            /home/feel/console/jdk1.6.0_13/jre/lib/i386/libjpeg.so
+ced0d000-ced10000 ---p 00000000 00:00 0 
+ced10000-ced5e000 rwxp 00000000 00:00 0 
+ced5e000-ced61000 ---p 00000000 00:00 0 
+ced61000-cedaf000 rwxp 00000000 00:00 0 
+cedaf000-cedb2000 ---p 00000000 00:00 0 
+cedb2000-cee00000 rwxp 00000000 00:00 0 
+cee00000-ceeff000 rwxp 00000000 00:00 0 
+ceeff000-cef00000 ---p 00000000 00:00 0 
+cef3b000-cef3e000 ---p 00000000 00:00 0 
+cef3e000-cef8c000 rwxp 00000000 00:00 0 
+cef8c000-cef8f000 ---p 00000000 00:00 0 
+cef8f000-cefdd000 rwxp 00000000 00:00 0 
+cefdd000-cf05c000 r-xp 00000000 08:02 3674547                            /home/feel/console/jdk1.6.0_13/jre/lib/i386/libfontmanager.so
+cf05c000-cf067000 rwxp 0007e000 08:02 3674547                            /home/feel/console/jdk1.6.0_13/jre/lib/i386/libfontmanager.so
+cf067000-cf06b000 rwxp 00000000 00:00 0 
+cf06b000-cf0ef000 r-xp 00000000 08:02 3674528                            /home/feel/console/jdk1.6.0_13/jre/lib/i386/libawt.so
+cf0ef000-cf0f6000 rwxp 00084000 08:02 3674528                            /home/feel/console/jdk1.6.0_13/jre/lib/i386/libawt.so
+cf0f6000-cf11a000 rwxp 00000000 00:00 0 
+cf11a000-cf11d000 ---p 00000000 00:00 0 
+cf11d000-cf16b000 rwxp 00000000 00:00 0 
+cf16b000-cf16e000 ---p 00000000 00:00 0 
+cf16e000-cf1bc000 rwxp 00000000 00:00 0 
+cf1bc000-cf1bf000 ---p 00000000 00:00 0 
+cf1bf000-cf20d000 rwxp 00000000 00:00 0 
+cf20d000-cf210000 ---p 00000000 00:00 0 
+cf210000-cf25e000 rwxp 00000000 00:00 0 
+cf25e000-cf261000 ---p 00000000 00:00 0 
+cf261000-cf2af000 rwxp 00000000 00:00 0 
+cf2af000-cf2b2000 ---p 00000000 00:00 0 
+cf2b2000-cf300000 rwxp 00000000 00:00 0 
+cf300000-cf3ec000 rwxp 00000000 00:00 0 
+cf3ec000-cf400000 ---p 00000000 00:00 0 
+cf427000-cf42a000 ---p 00000000 00:00 0 
+cf42a000-cf478000 rwxp 00000000 00:00 0 
+cf478000-cf47b000 ---p 00000000 00:00 0 
+cf47b000-cf4c9000 rwxp 00000000 00:00 0 
+cf4c9000-cf4cc000 ---p 00000000 00:00 0 
+cf4cc000-cf51a000 rwxp 00000000 00:00 0 
+cf51a000-cf51d000 ---p 00000000 00:00 0 
+cf51d000-cf56b000 rwxp 00000000 00:00 0 
+cf56b000-cf56e000 ---p 00000000 00:00 0 
+cf56e000-cf5bc000 rwxp 00000000 00:00 0 
+cf5bc000-cf5bf000 ---p 00000000 00:00 0 
+cf5bf000-cf60d000 rwxp 00000000 00:00 0 
+cf60d000-cf610000 ---p 00000000 00:00 0 
+cf610000-cf65e000 rwxp 00000000 00:00 0 
+cf65e000-cf661000 ---p 00000000 00:00 0 
+cf661000-cf6af000 rwxp 00000000 00:00 0 
+cf6af000-cf6b2000 ---p 00000000 00:00 0 
+cf6b2000-cf700000 rwxp 00000000 00:00 0 
+cf700000-cf756000 rwxp 00000000 00:00 0 
+cf756000-cf800000 ---p 00000000 00:00 0 
+cf80d000-cf810000 ---p 00000000 00:00 0 
+cf810000-cf85e000 rwxp 00000000 00:00 0 
+cf85e000-cf861000 ---p 00000000 00:00 0 
+cf861000-cf8af000 rwxp 00000000 00:00 0 
+cf8af000-cf8b2000 ---p 00000000 00:00 0 
+cf8b2000-cf900000 rwxp 00000000 00:00 0 
+cf900000-cf9f4000 rwxp 00000000 00:00 0 
+cf9f4000-cfa00000 ---p 00000000 00:00 0 
+cfa1e000-cfa2c000 r-xs 0065f000 08:02 2627590                            /home/feel/console/jdk1.6.0_13/jre/lib/charsets.jar
+cfa2c000-cfa33000 r-xp 00000000 08:02 3674539                            /home/feel/console/jdk1.6.0_13/jre/lib/i386/libnio.so
+cfa33000-cfa34000 rwxp 00006000 08:02 3674539                            /home/feel/console/jdk1.6.0_13/jre/lib/i386/libnio.so
+cfa34000-cfa39000 r-xp 00000000 08:02 3674526                            /home/feel/console/jdk1.6.0_13/jre/lib/i386/headless/libmawt.so
+cfa39000-cfa3a000 rwxp 00004000 08:02 3674526                            /home/feel/console/jdk1.6.0_13/jre/lib/i386/headless/libmawt.so
+cfa3a000-cfa3d000 ---p 00000000 00:00 0 
+cfa3d000-cfa8b000 rwxp 00000000 00:00 0 
+cfa8b000-cfa8e000 ---p 00000000 00:00 0 
+cfa8e000-cfadc000 rwxp 00000000 00:00 0 
+cfadc000-cfadf000 r-xs 00013000 08:02 2627608                            /home/feel/console/jdk1.6.0_13/jre/lib/jce.jar
+cfadf000-cfae6000 r-xs 00110000 08:02 2627594                            /home/feel/console/jdk1.6.0_13/jre/lib/resources.jar
+cfae6000-cfae9000 r-xs 00027000 08:02 3416822                            /home/feel/console/jdk1.6.0_13/jre/lib/ext/sunjce_provider.jar
+cfae9000-cfafc000 r-xp 00000000 08:02 3674545                            /home/feel/console/jdk1.6.0_13/jre/lib/i386/libnet.so
+cfafc000-cfafd000 rwxp 00013000 08:02 3674545                            /home/feel/console/jdk1.6.0_13/jre/lib/i386/libnet.so
+cfafd000-cfb00000 r-xs 000cb000 08:02 3416821                            /home/feel/console/jdk1.6.0_13/jre/lib/ext/localedata.jar
+cfb00000-cfbf9000 rwxp 00000000 00:00 0 
+cfbf9000-cfc00000 ---p 00000000 00:00 0 
+cfc00000-cfcf9000 rwxp 00000000 00:00 0 
+cfcf9000-cfd00000 ---p 00000000 00:00 0 
+cfd00000-cfdff000 rwxp 00000000 00:00 0 
+cfdff000-cfe00000 ---p 00000000 00:00 0 
+cfe00000-cfef8000 rwxp 00000000 00:00 0 
+cfef8000-cff00000 ---p 00000000 00:00 0 
+cff00000-cffff000 rwxp 00000000 00:00 0 
+cffff000-d0000000 ---p 00000000 00:00 0 
+d0001000-d0008000 r-xs 00091000 08:02 2627582                            /home/feel/console/jdk1.6.0_13/jre/lib/jsse.jar
+d0008000-d0011000 r-xs 00058000 08:02 3417018                            /home/feel/console/tomcat6/lib/standard.jar
+d0011000-d0019000 r-xs 000a0000 08:02 3417017                            /home/feel/console/tomcat6/lib/obts.jar
+d0019000-d0034000 r-xs 00142000 08:02 3417015                            /home/feel/console/tomcat6/lib/poi-3.2-FINAL-20081019.jar
+d0034000-d0041000 r-xs 0007c000 08:02 3417012                            /home/feel/console/tomcat6/lib/commons-collections.jar
+d0041000-d0044000 r-xs 00022000 08:02 3417010                            /home/feel/console/tomcat6/lib/jTDS3.jar
+d0044000-d0047000 r-xs 0003f000 08:02 3417009                            /home/feel/console/tomcat6/lib/ccas.jar
+d0047000-d004a000 r-xs 0001a000 08:02 3417008                            /home/feel/console/tomcat6/lib/ehcache-1.2.jar
+d004a000-d0057000 r-xs 000b2000 08:02 3417007                            /home/feel/console/tomcat6/lib/ifxsqlj.jar
+d0057000-d0058000 r-xs 00008000 08:02 3417006                            /home/feel/console/tomcat6/lib/pop3.jar
+d0058000-d005d000 r-xs 00035000 08:02 3417005                            /home/feel/console/tomcat6/lib/catalina-tribes.jar
+d005d000-d0078000 r-xs 00212000 08:02 3417004                            /home/feel/console/tomcat6/lib/Common.jar
+d0078000-d0084000 r-xs 00105000 08:02 3417003                            /home/feel/console/tomcat6/lib/iText-2.1.5.jar
+d0084000-d008b000 r-xs 0006a000 08:02 3417002                            /home/feel/console/tomcat6/lib/javassist.jar
+d008b000-d008c000 r-xs 00007000 08:02 3417001                            /home/feel/console/tomcat6/lib/el-api.jar
+d008c000-d008e000 r-xs 00006000 08:02 3417000                            /home/feel/console/tomcat6/lib/commons-cli-1.0.jar
+d008e000-d0093000 r-xs 00019000 08:02 3416998                            /home/feel/console/tomcat6/lib/db2policy.jar
+d0093000-d00d0000 r-xs 00294000 08:02 3416997                            /home/feel/console/tomcat6/lib/spring.jar
+d00d0000-d00d1000 r-xs 00002000 08:02 3416996                            /home/feel/console/tomcat6/lib/db2umplugin.jar
+d00d1000-d00d3000 r-xs 00021000 08:02 3416995                            /home/feel/console/tomcat6/lib/syndiag2.jar
+d00d3000-d00d7000 r-xs 00035000 08:02 3416994                            /home/feel/console/tomcat6/lib/tomcat-dbcp.jar
+d00d7000-d00d8000 r-xs 00000000 08:02 3416993                            /home/feel/console/tomcat6/lib/objectweb-datasource.jar
+d00d8000-d00e7000 r-xs 00113000 08:02 3416991                            /home/feel/console/tomcat6/lib/catalina.jar
+d00e7000-d0100000 r-xs 00325000 08:02 3416990                            /home/feel/console/tomcat6/lib/db2jcc4.jar
+d0100000-d01fe000 rwxp 00000000 00:00 0 
+d01fe000-d0200000 ---p 00000000 00:00 0 
+d0200000-d02f9000 rwxp 00000000 00:00 0 
+d02f9000-d0300000 ---p 00000000 00:00 0 
+d0300000-d0301000 r-xs 00000000 08:02 3417016                            /home/feel/console/tomcat6/lib/db2jcc_license_cu.jar
+d0301000-d0303000 r-xs 0002a000 08:02 3417014                            /home/feel/console/tomcat6/lib/db2qgjava.jar
+d0303000-d0304000 r-xs 00004000 08:02 3417013                            /home/feel/console/tomcat6/lib/dsn.jar
+d0304000-d0305000 r-xs 00003000 08:02 3417011                            /home/feel/console/tomcat6/lib/annotations-api.jar
+d0305000-d0307000 r-xs 00014000 08:02 3416988                            /home/feel/console/tomcat6/lib/servlet-api.jar
+d0307000-d0308000 r-xs 00007000 08:02 3416987                            /home/feel/console/tomcat6/lib/commons-email-1.2.jar
+d0308000-d0309000 r-xs 00001000 08:02 3416986                            /home/feel/console/tomcat6/lib/clPay.jar
+d0309000-d030b000 r-xs 0000b000 08:02 3416984                            /home/feel/console/tomcat6/lib/tomcat-i18n-fr.jar
+d030b000-d0313000 r-xs 0017c000 08:02 3416983                            /home/feel/console/tomcat6/lib/ifxlang.jar
+d0313000-d0315000 r-xs 0000d000 08:02 3416982                            /home/feel/console/tomcat6/lib/msutil.jar
+d0315000-d031c000 r-xs 0006a000 08:02 3416981                            /home/feel/console/tomcat6/lib/mail.jar
+d031c000-d0320000 r-xs 0002e000 08:02 3416979                            /home/feel/console/tomcat6/lib/proxool-0.9.1.jar
+d0320000-d0338000 r-xs 00033000 08:02 3416978                            /home/feel/console/tomcat6/lib/ifxlsupp.jar
+d0338000-d033c000 r-xs 0019b000 08:02 3416977                            /home/feel/console/tomcat6/lib/iTextAsianCmaps.jar
+d033c000-d033e000 r-xs 0000d000 08:02 3416976                            /home/feel/console/tomcat6/lib/RXTXcomm.jar
+d033e000-d038c000 r-xs 006c2000 08:02 3416975                            /home/feel/console/tomcat6/lib/iReport.jar
+d038c000-d038d000 r-xs 00008000 08:02 3416974                            /home/feel/console/tomcat6/lib/commons-attributes-api.jar
+d038d000-d038e000 r-xs 00008000 08:02 3416972                            /home/feel/console/tomcat6/lib/chinapay.jar
+d038e000-d0393000 r-xs 00040000 08:02 3416971                            /home/feel/console/tomcat6/lib/bsh-2.0b4.jar
+d0393000-d0396000 r-xs 0001c000 08:02 3416970                            /home/feel/console/tomcat6/lib/jotm.jar
+d0396000-d0398000 r-xs 0000f000 08:02 3416969                            /home/feel/console/tomcat6/lib/jhsm.jar
+d0398000-d039a000 r-xs 00050000 08:02 3416968                            /home/feel/console/tomcat6/lib/iTextAsian.jar
+d039a000-d039b000 r-xs 0000a000 08:02 3416967                            /home/feel/console/tomcat6/lib/smtp.jar
+d039b000-d039d000 r-xs 0001c000 08:02 3416966                            /home/feel/console/tomcat6/lib/commons-dbcp-1.2.2.jar
+d039d000-d03a1000 r-xs 0003c000 08:02 3416965                            /home/feel/console/tomcat6/lib/commons-lang-2.4.jar
+d03a1000-d03a3000 r-xs 00006000 08:02 3416964                            /home/feel/console/tomcat6/lib/commons-attributes-compiler.jar
+d03a3000-d03a5000 r-xs 00003000 08:02 3416963                            /home/feel/console/tomcat6/lib/connector.jar
+d03a5000-d03a7000 r-xs 00011000 08:02 3416962                            /home/feel/console/tomcat6/lib/jsp-api.jar
+d03a7000-d03b3000 r-xs 0014c000 08:02 3416961                            /home/feel/console/tomcat6/lib/jasper-jdt.jar
+d03b3000-d03b4000 r-xs 00006000 08:02 3416959                            /home/feel/console/tomcat6/lib/asm.jar
+d03b4000-d03bb000 r-xs 0004b000 08:02 3416958                            /home/feel/console/tomcat6/lib/proxool-cglib.jar
+d03bb000-d03bc000 r-xs 00005000 08:02 3416957                            /home/feel/console/tomcat6/lib/GRGPINPad.jar
+d03bc000-d03c0000 r-xs 00030000 08:02 3416956                            /home/feel/console/tomcat6/lib/struts-el.jar
+d03c0000-d03c2000 r-xs 00001000 08:02 3416955                            /home/feel/console/tomcat6/lib/jta.jar
+d03c2000-d03c5000 r-xs 00016000 08:02 3416953                            /home/feel/console/tomcat6/lib/spring-mock.jar
+d03c5000-d03e6000 r-xs 001fb000 08:02 3416952                            /home/feel/console/tomcat6/lib/hibernate3.jar
+d03e6000-d03ea000 r-xs 00017000 08:02 3416951                            /home/feel/console/tomcat6/lib/jts1_0.jar
+d03ea000-d03f5000 r-xs 000af000 08:02 3416949                            /home/feel/console/tomcat6/lib/tomcat-coyote.jar
+d03f5000-d0400000 r-xs 0008b000 08:02 3416947                            /home/feel/console/tomcat6/lib/c3p0-0.9.1.2.jar
+d0400000-d0500000 rwxp 00000000 00:00 0 
+d0500000-d05ff000 rwxp 00000000 00:00 0 
+d05ff000-d0600000 ---p 00000000 00:00 0 
+d0600000-d0603000 r-xs 00007000 08:02 3416980                            /home/feel/console/tomcat6/lib/connector-1_5.jar
+d0603000-d060a000 r-xs 00089000 08:02 3416950                            /home/feel/console/tomcat6/lib/jconn4.jar
+d060a000-d060c000 r-xs 0000e000 08:02 3416946                            /home/feel/console/tomcat6/lib/oro-2.0.8.jar
+d060c000-d060d000 r-xs 00001000 08:02 3416945                            /home/feel/console/tomcat6/lib/jotm_jrmp_stubs.jar
+d060d000-d0628000 r-xs 0015d000 08:02 3416944                            /home/feel/console/tomcat6/lib/poi-3.6-20091214.jar
+d0628000-d062d000 r-xs 00040000 08:02 3416943                            /home/feel/console/tomcat6/lib/commons-httpclient.jar
+d062d000-d0630000 r-xs 0000f000 08:02 3416942                            /home/feel/console/tomcat6/lib/commons-discovery.jar
+d0630000-d0632000 r-xs 00003000 08:02 3416940                            /home/feel/console/tomcat6/lib/asm-attrs.jar
+d0632000-d0652000 r-xs 0018d000 08:02 3416939                            /home/feel/console/tomcat6/lib/jasperreports-2.0.1.jar
+d0652000-d0658000 r-xs 0003f000 08:02 3416937                            /home/feel/console/tomcat6/lib/cglib-2.1.3.jar
+d0658000-d0660000 r-xs 00051000 08:02 3416936                            /home/feel/console/tomcat6/lib/velocity-1.4.jar
+d0660000-d0662000 r-xs 0000e000 08:02 3416935                            /home/feel/console/tomcat6/lib/jSMSEngine.jar
+d0662000-d0667000 r-xs 00025000 08:02 3416934                            /home/feel/console/tomcat6/lib/concurrent-1.3.2.jar
+d0667000-d066c000 r-xs 00039000 08:02 3416933                            /home/feel/console/tomcat6/lib/mailapi.jar
+d066c000-d0673000 r-xs 0004f000 08:02 3416931                            /home/feel/console/tomcat6/lib/log4j-1.2.11.jar
+d0673000-d0676000 r-xs 00019000 08:02 3416928                            /home/feel/console/tomcat6/lib/oscache-2.1.jar
+d0676000-d0679000 r-xs 00019000 08:02 3416927                            /home/feel/console/tomcat6/lib/hessian-3.0.1.jar
+d0679000-d067e000 r-xs 000b0000 08:02 3416926                            /home/feel/console/tomcat6/lib/ifxjdbc.jar
+d067e000-d0681000 r-xs 00028000 08:02 3416925                            /home/feel/console/tomcat6/lib/imap.jar
+d0681000-d0687000 r-xs 0007f000 08:02 3416924                            /home/feel/console/tomcat6/lib/mysql-connector-java-5.0.8-bin.jar
+d0687000-d0689000 r-xs 00012000 08:02 3416923                            /home/feel/console/tomcat6/lib/burlap-2.1.7.jar
+d0689000-d068b000 r-xs 0000c000 08:02 3416922                            /home/feel/console/tomcat6/lib/tomcat-i18n-ja.jar
+d068b000-d0693000 r-xs 00077000 08:02 3416921                            /home/feel/console/tomcat6/lib/jboss-cache.jar
+d0693000-d0695000 r-xs 0000c000 08:02 3416920                            /home/feel/console/tomcat6/lib/activation.jar
+d0695000-d0698000 r-xs 00018000 08:02 3416919                            /home/feel/console/tomcat6/lib/jasper-el.jar
+d0698000-d069d000 r-xs 00028000 08:02 3416918                            /home/feel/console/tomcat6/lib/commons-net-1.4.1.jar
+d069d000-d06a5000 r-xs 00079000 08:02 3416917                            /home/feel/console/tomcat6/lib/jasper.jar
+d06a5000-d06aa000 r-xs 00048000 08:02 3416916                            /home/feel/console/tomcat6/lib/dom4j-1.6.1.jar
+d06aa000-d06ac000 r-xs 00006000 08:02 3416913                            /home/feel/console/tomcat6/lib/swarmcache-1.0rc2.jar
+d06ac000-d06af000 r-xs 00023000 08:02 3416912                            /home/feel/console/tomcat6/lib/jdom-1.0.jar
+d06af000-d06c6000 r-xs 002fd000 08:02 3416910                            /home/feel/console/tomcat6/lib/db2jcc.jar
+d06c6000-d06c8000 r-xs 0000a000 08:02 3416905                            /home/feel/console/tomcat6/lib/ifxtools.jar
+d06c8000-d06ca000 r-xs 00000000 08:02 3416904                            /home/feel/console/tomcat6/lib/aopalliance-1.0.jar
+d06ca000-d06cc000 r-xs 0000c000 08:02 3416902                            /home/feel/console/tomcat6/lib/catalina-ant.jar
+d06cc000-d06d5000 r-xs 0007c000 08:02 3416900                            /home/feel/console/tomcat6/lib/jpos.jar
+d06d5000-d06e4000 r-xs 00176000 08:02 3416899                            /home/feel/console/tomcat6/lib/oracle10g.jar
+d06e4000-d06eb000 r-xs 001ad000 08:02 3416898                            /home/feel/console/tomcat6/lib/nlscharset12.jar
+d06eb000-d06ee000 r-xs 00015000 08:02 3416897                            /home/feel/console/tomcat6/lib/commons-pool-1.5.4.jar
+d06ee000-d06f3000 r-xs 0002a000 08:02 3416896                            /home/feel/console/tomcat6/lib/ow_carol.jar
+d06f3000-d06f5000 r-xs 00009000 08:02 3416894                            /home/feel/console/tomcat6/lib/jotm_iiop_stubs.jar
+d06f5000-d06f7000 r-xs 00017000 08:02 3416892                            /home/feel/console/tomcat6/lib/howl.jar
+d06f7000-d06fa000 r-xs 0000c000 08:02 3416891                            /home/feel/console/tomcat6/lib/commons-fileupload-1.2.1.jar
+d06fa000-d0700000 r-xs 00041000 08:02 3416890                            /home/feel/console/tomcat6/lib/msbase.jar
+d0700000-d07fd000 rwxp 00000000 00:00 0 
+d07fd000-d0800000 ---p 00000000 00:00 0 
+d0800000-d0801000 r-xs 0000a000 08:02 3416915                            /home/feel/console/tomcat6/lib/ifxjdbcx.jar
+d0801000-d0804000 r-xs 00013000 08:02 3416911                            /home/feel/console/tomcat6/lib/commons-io-1.3.2.jar
+d0804000-d0806000 r-xs 0000a000 08:02 3416909                            /home/feel/console/tomcat6/lib/commons-codec.jar
+d0806000-d0808000 r-xs 0000e000 08:02 3416907                            /home/feel/console/tomcat6/lib/jSMSServer.jar
+d0808000-d080a000 r-xs 00001000 08:02 3416889                            /home/feel/console/tomcat6/lib/spring-aspects.jar
+d080a000-d0810000 r-xs 00032000 08:02 3416888                            /home/feel/console/tomcat6/lib/jaxen-1.1.1.jar
+d0810000-d0813000 r-xs 0000f000 08:02 3416887                            /home/feel/console/tomcat6/lib/tomcat-i18n-es.jar
+d0813000-d0819000 r-xs 00067000 08:02 3416886                            /home/feel/console/tomcat6/lib/antlr-2.7.6.jar
+d0819000-d081f000 r-xs 00046000 08:02 3416884                            /home/feel/console/tomcat6/lib/jcommon-1.0.16.jar
+d081f000-d0823000 r-xs 00026000 08:02 3416985                            /home/feel/console/tomcat6/lib/commons-digester.jar
+d0823000-d0824000 ---p 00000000 00:00 0 
+d0824000-d08a4000 rwxp 00000000 00:00 0 
+d08a4000-d08a7000 ---p 00000000 00:00 0 
+d08a7000-d08f5000 rwxp 00000000 00:00 0 
+d08f5000-d08f8000 ---p 00000000 00:00 0 
+d08f8000-d0976000 rwxp 00000000 00:00 0 
+d0976000-d0979000 ---p 00000000 00:00 0 
+d0979000-d09f7000 rwxp 00000000 00:00 0 
+d09f7000-d09fa000 ---p 00000000 00:00 0 
+d09fa000-d0a48000 rwxp 00000000 00:00 0 
+d0a48000-d0b9c000 r-xp 03270000 08:02 22807230                           /usr/lib/locale/locale-archive
+d0b9c000-d0d9c000 r-xp 00000000 08:02 22807230                           /usr/lib/locale/locale-archive
+d0d9c000-d0d9f000 ---p 00000000 00:00 0 
+d0d9f000-d0ded000 rwxp 00000000 00:00 0 
+d0ded000-d0dee000 ---p 00000000 00:00 0 
+d0dee000-d0e6e000 rwxp 00000000 00:00 0 
+d0e6e000-d1000000 r-xs 02f34000 08:02 2627580                            /home/feel/console/jdk1.6.0_13/jre/lib/rt.jar
+d1000000-d1100000 rwxp 00000000 00:00 0 
+d1100000-d110a000 r-xs 0007c000 08:02 3416883                            /home/feel/console/tomcat6/lib/struts.jar
+d110a000-d110b000 r-xs 00001000 08:02 3416881                            /home/feel/console/tomcat6/lib/ant-antlr-1.6.5.jar
+d110b000-d110d000 r-xs 00004000 08:02 3416880                            /home/feel/console/tomcat6/lib/jstl.jar
+d110d000-d111e000 r-xs 0014c000 08:02 3416879                            /home/feel/console/tomcat6/lib/jfreechart-1.0.13.jar
+d111e000-d1120000 r-xs 00007000 08:02 3416878                            /home/feel/console/tomcat6/lib/aspectjrt-1.2.jar
+d1120000-d1123000 r-xs 00047000 08:02 3416877                            /home/feel/console/tomcat6/lib/jtds-1.2.5.jar
+d1123000-d1124000 r-xs 0000c000 08:02 3416876                            /home/feel/console/tomcat6/lib/db2dbgm.jar
+d1124000-d1126000 r-xs 0000f000 08:02 3416875                            /home/feel/console/tomcat6/lib/mssqlserver.jar
+d1126000-d1128000 r-xs 0000e000 08:02 3416874                            /home/feel/console/tomcat6/lib/velocity-tools-view-1.1.jar
+d1128000-d112a000 r-xs 0000d000 08:02 3416901                            /home/feel/console/tomcat6/lib/commons-logging.jar
+d112a000-d112c000 r-xs 00001000 08:02 3416893                            /home/feel/console/tomcat6/lib/jta-spec1_0_1.jar
+d112c000-d112e000 r-xs 00017000 08:02 3416873                            /home/feel/console/tomcat6/lib/xapool-1.6.beta.jar
+d112e000-d1131000 ---p 00000000 00:00 0 
+d1131000-d117f000 rwxp 00000000 00:00 0 
+d117f000-d1180000 ---p 00000000 00:00 0 
+d1180000-d1200000 rwxp 00000000 00:00 0 
+d1200000-d12fc000 rwxp 00000000 00:00 0 
+d12fc000-d1300000 ---p 00000000 00:00 0 
+d1300000-d1301000 r-xs 00005000 08:02 3416914                            /home/feel/console/tomcat6/lib/casclient-2.0.11.jar
+d1301000-d1303000 r-xs 00013000 08:02 3416872                            /home/feel/console/tomcat6/lib/commons-validator.jar
+d1303000-d1308000 r-xs 0002a000 08:02 3416870                            /home/feel/console/tomcat6/lib/commons-beanutils.jar
+d1308000-d1348000 r-xp 02d7f000 08:02 22807230                           /usr/lib/locale/locale-archive
+d1348000-d137b000 rwxp 00000000 00:00 0 
+d137b000-d137c000 ---p 00000000 00:00 0 
+d137c000-d1413000 rwxp 00000000 00:00 0 
+d1413000-d141c000 rwxp 00000000 00:00 0 
+d141c000-d1435000 rwxp 00000000 00:00 0 
+d1435000-d14f8000 rwxp 00000000 00:00 0 
+d14f8000-d150f000 rwxp 00000000 00:00 0 
+d150f000-d1518000 rwxp 00000000 00:00 0 
+d1518000-d1531000 rwxp 00000000 00:00 0 
+d1531000-d15f3000 rwxp 00000000 00:00 0 
+d15f3000-d15fb000 rwxp 00000000 00:00 0 
+d15fb000-d160f000 rwxp 00000000 00:00 0 
+d160f000-d42f0000 rwxp 00000000 00:00 0 
+d42f0000-d5610000 rwxp 00000000 00:00 0 
+d5610000-d8760000 rwxp 00000000 00:00 0 
+d8760000-f0d30000 rwxp 00000000 00:00 0 
+f0d30000-f1b60000 rwxp 00000000 00:00 0 
+f1b60000-f4410000 rwxp 00000000 00:00 0 
+f4410000-f4415000 r-xs 00031000 08:02 3416869                            /home/feel/console/tomcat6/lib/jdbm-1.0.jar
+f4415000-f4418000 r-xs 00017000 08:02 3416868                            /home/feel/console/tomcat6/lib/jaas.jar
+f4418000-f441b000 r-xs 0001d000 08:02 3416867                            /home/feel/console/tomcat6/lib/catalina-ha.jar
+f441b000-f442f000 rwxp 00000000 00:00 0 
+f442f000-f44db000 rwxp 00000000 00:00 0 
+f44db000-f49bb000 rwxp 00000000 00:00 0 
+f49bb000-f74db000 rwxp 00000000 00:00 0 
+f74db000-f74fe000 r-xp 00000000 08:02 3674570                            /home/feel/console/jdk1.6.0_13/jre/lib/i386/libjava.so
+f74fe000-f7500000 rwxp 00023000 08:02 3674570                            /home/feel/console/jdk1.6.0_13/jre/lib/i386/libjava.so
+f7500000-f75ff000 rwxp 00000000 00:00 0 
+f75ff000-f7600000 ---p 00000000 00:00 0 
+f7600000-f760f000 r-xp 00000000 08:02 3674567                            /home/feel/console/jdk1.6.0_13/jre/lib/i386/libzip.so
+f760f000-f7611000 rwxp 0000e000 08:02 3674567                            /home/feel/console/jdk1.6.0_13/jre/lib/i386/libzip.so
+f7611000-f7628000 r-xp 00000000 08:02 527877                             /lib/libnsl-2.12.so
+f7628000-f7629000 r-xp 00016000 08:02 527877                             /lib/libnsl-2.12.so
+f7629000-f762a000 rwxp 00017000 08:02 527877                             /lib/libnsl-2.12.so
+f762a000-f762c000 rwxp 00000000 00:00 0 
+f762c000-f762d000 r-xs 00005000 08:02 3416906                            /home/feel/console/tomcat6/lib/jacc-1_0-fr.jar
+f762d000-f7633000 r-xp 00000000 08:02 3674555                            /home/feel/console/jdk1.6.0_13/jre/lib/i386/libmanagement.so
+f7633000-f7634000 rwxp 00005000 08:02 3674555                            /home/feel/console/jdk1.6.0_13/jre/lib/i386/libmanagement.so
+f7634000-f7635000 r-xs 00006000 08:02 2627662                            /home/feel/console/tomcat6/bin/tomcat-juli.jar
+f7635000-f7640000 r-xp 00000000 08:02 3674533                            /home/feel/console/jdk1.6.0_13/jre/lib/i386/libverify.so
+f7640000-f7641000 rwxp 0000b000 08:02 3674533                            /home/feel/console/jdk1.6.0_13/jre/lib/i386/libverify.so
+f7641000-f7649000 rwxs 00000000 08:02 18481225                           /tmp/hsperfdata_feel/27545
+f7649000-f7650000 r-xp 00000000 08:02 527895                             /lib/librt-2.12.so
+f7650000-f7651000 r-xp 00006000 08:02 527895                             /lib/librt-2.12.so
+f7651000-f7652000 rwxp 00007000 08:02 527895                             /lib/librt-2.12.so
+f7652000-f7655000 ---p 00000000 00:00 0 
+f7655000-f76a3000 rwxp 00000000 00:00 0 
+f76a3000-f76cb000 r-xp 00000000 08:02 527875                             /lib/libm-2.12.so
+f76cb000-f76cc000 r-xp 00027000 08:02 527875                             /lib/libm-2.12.so
+f76cc000-f76cd000 rwxp 00028000 08:02 527875                             /lib/libm-2.12.so
+f76cd000-f76ce000 rwxp 00000000 00:00 0 
+f76ce000-f76d1000 r-xp 00000000 08:02 527873                             /lib/libdl-2.12.so
+f76d1000-f76d2000 r-xp 00002000 08:02 527873                             /lib/libdl-2.12.so
+f76d2000-f76d3000 rwxp 00003000 08:02 527873                             /lib/libdl-2.12.so
+f76d3000-f76d4000 rwxp 00000000 00:00 0 
+f76d4000-f76db000 r-xp 00000000 08:02 3674569                            /home/feel/console/jdk1.6.0_13/jre/lib/i386/jli/libjli.so
+f76db000-f76dd000 rwxp 00006000 08:02 3674569                            /home/feel/console/jdk1.6.0_13/jre/lib/i386/jli/libjli.so
+f76dd000-f76f4000 r-xp 00000000 08:02 527891                             /lib/libpthread-2.12.so
+f76f4000-f76f5000 r-xp 00016000 08:02 527891                             /lib/libpthread-2.12.so
+f76f5000-f76f6000 rwxp 00017000 08:02 527891                             /lib/libpthread-2.12.so
+f76f6000-f76f8000 rwxp 00000000 00:00 0 
+f76f8000-f76fa000 r-xs 00001000 08:02 2627675                            /home/feel/console/tomcat6/bin/commons-daemon.jar
+f76fa000-f76fc000 r-xs 00004000 08:02 2627681                            /home/feel/console/tomcat6/bin/bootstrap.jar
+f76fc000-f76fe000 r-xs 0000d000 08:02 3416820                            /home/feel/console/jdk1.6.0_13/jre/lib/ext/RXTXcomm.jar
+f76fe000-f770a000 r-xp 00000000 08:02 527883                             /lib/libnss_files-2.12.so
+f770a000-f770b000 r-xp 0000b000 08:02 527883                             /lib/libnss_files-2.12.so
+f770b000-f770c000 rwxp 0000c000 08:02 527883                             /lib/libnss_files-2.12.so
+f770c000-f7712000 r-xp 00000000 08:02 3674532                            /home/feel/console/jdk1.6.0_13/jre/lib/i386/native_threads/libhpi.so
+f7712000-f7713000 rwxp 00006000 08:02 3674532                            /home/feel/console/jdk1.6.0_13/jre/lib/i386/native_threads/libhpi.so
+f7713000-f7714000 rwxp 00000000 00:00 0 
+f7714000-f7715000 r-xp 00000000 00:00 0 
+f7715000-f7716000 rwxp 00000000 00:00 0 
+f7716000-f7717000 r-xp 00000000 00:00 0                                  [vdso]
+ffb5a000-ffb70000 rwxp 00000000 00:00 0                                  [stack]
+
+VM Arguments:
+jvm_args: -Djava.util.logging.config.file=/home/feel/console/tomcat6/conf/logging.properties -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djava.endorsed.dirs=/home/feel/console/tomcat6/endorsed -Dcatalina.base=/home/feel/console/tomcat6 -Dcatalina.home=/home/feel/console/tomcat6 -Djava.io.tmpdir=/home/feel/console/tomcat6/temp -Djava.awt.headless=true 
+java_command: org.apache.catalina.startup.Bootstrap start
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=/home/feel/console/jdk1.6.0_13
+CLASSPATH=/home/feel/console/tomcat6/bin/bootstrap.jar
+PATH=/home/feel/console/jdk1.6.0_13/bin:/home/feel/console/tomcat6/bin:/grg/oracle/OracleHome/bin:/usr/sbin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/feel/bin:/home/feel/Online/bin:/home/feel/Online/lib:/home/feel/Online/lib/comlib:/home/feel/bin:/grg/oracle/OracleHome/bin:/usr/sbin:/home/feel/Online/bin:/usr/sbin:/usr/bin:/usr/local/bin:/home/feel/Online/bin:/usr/sbin:/usr/bin:/usr/local/bin
+LD_LIBRARY_PATH=/home/feel/console/jdk1.6.0_13/jre/lib/i386/server:/home/feel/console/jdk1.6.0_13/jre/lib/i386:/home/feel/console/jdk1.6.0_13/jre/../lib/i386:/grg/oracle/OracleHome/lib:/lib64:/usr/lib64:/grg/oracle/OracleHome/lib:/lib64:/usr/lib64:/home/feel/Online/lib:/home/feel/Online/lib/comlib:/home/feel/Online/lib:/home/feel/Online/lib/comlib
+SHELL=/bin/bash
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x6071f0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGBUS: [libjvm.so+0x6071f0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGFPE: [libjvm.so+0x5048b0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGPIPE: [libjvm.so+0x5048b0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGXFSZ: [libjvm.so+0x5048b0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGILL: [libjvm.so+0x5048b0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x506d80], sa_mask[0]=0x00000000, sa_flags=0x10000004
+SIGHUP: SIG_IGN, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGINT: SIG_IGN, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGTERM: [libjvm.so+0x506b20], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGQUIT: [libjvm.so+0x506b20], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+
+
+---------------  S Y S T E M  ---------------
+
+OS:Red Hat Enterprise Linux Server release 6.3 (Santiago)
+
+uname:Linux 2.6.32-279.el6.x86_64 #1 SMP Wed Jun 13 18:24:36 EDT 2012 x86_64
+libc:glibc 2.12 NPTL 2.12 
+rlimit: STACK 10240k, CORE 102400k, NPROC 1024, NOFILE 4096, AS infinity
+load average:0.00 0.00 0.00
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 6 model 7 stepping 10, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3
+
+Memory: 4k page, physical 2017260k(132460k free), swap 4194296k(4117952k free)
+
+vm_info: Java HotSpot(TM) Server VM (11.3-b02) for linux-x86 JRE (1.6.0_13-b03), built on Mar  9 2009 01:16:42 by "java_re" with gcc 3.2.1-7a (J2SE release)
+
+time: Thu Dec 26 09:57:09 2013
+elapsed time: 65711 seconds
+

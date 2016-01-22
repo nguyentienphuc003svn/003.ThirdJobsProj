@@ -1,0 +1,29 @@
+<?xml version="1.0" standalone="yes"?>
+<ManipulateConf>
+<t_TxnState_T name="001">
+	<!-- START SAMPLE MSG -->
+	<t_TxnState_field table="t_TxnState">
+		<m_iStateID>001</m_iStateID>
+		<m_iChannelID></m_iChannelID>
+		<m_iReqRes>0</m_iReqRes>
+		<m_iStateNum>0</m_iStateNum>
+		<m_iStateType>0</m_iStateType>
+		<m_iPara0>-1</m_iPara0>
+		<m_iPara1>-1</m_iPara1>
+		<m_acMemo>SIMPLE MSG REQ</m_acMemo>
+	</t_TxnState_field>	
+	<t_TxnState_field table="t_TxnState">
+		<m_iStateID>001</m_iStateID>
+		<m_iChannelID></m_iChannelID>
+		<m_iReqRes>1</m_iReqRes>
+		<m_iStateNum>0</m_iStateNum>
+		<m_iStateType>1</m_iStateType>
+		<m_iPara0>-1</m_iPara0>
+		<m_iPara1>-1</m_iPara1>
+		<m_iPara2>1</m_iPara2>
+		<m_acMemo>SIMPLE MSG RES</m_acMemo>
+	</t_TxnState_field>
+	<!--END SAMPLE MSG-->
+</t_TxnState_T>
+</ManipulateConf>
+

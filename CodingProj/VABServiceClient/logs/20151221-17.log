@@ -1,0 +1,43 @@
+20151221 17:12:35 The Data WS Transfer to Unpack SPLITTED into  [8] parts
+20151221 17:12:35 The Data WS Transfer to Unpack is [1031030402020020000008537900020000VND]
+20151221 17:12:35 The Message Type is [103] Boolean is true
+20151221 17:12:35 Can go to 103
+20151221 17:12:35 In the Status is [8] parts
+20151221 17:12:35 Value at [0] is [103]
+20151221 17:12:35 Value at [1] is [1030402]
+20151221 17:12:35 Value at [2] is [020]
+20151221 17:12:35 Value at [3] is [0200000085379000]
+20151221 17:12:35 Value at [4] is [20000]
+20151221 17:12:35 Value at [5] is [VND]
+20151221 17:12:35 Value at [6] is []
+20151221 17:12:35 Value at [7] is []
+20151221 17:12:57 Has Error at 103 Exception
+20151221 17:12:57 java.lang.ArrayIndexOutOfBoundsException: 4
+20151221 17:14:47 The Data WS Transfer to Unpack SPLITTED into  [7] parts
+20151221 17:14:47 The Data WS Transfer to Unpack is [1031030402020020000008537900020000VND]
+20151221 17:14:47 The Message Type is [103] Boolean is true
+20151221 17:14:47 Can go to 103
+20151221 17:14:47 In the Status is [7] parts
+20151221 17:14:47 Value at [0] is [103]
+20151221 17:14:47 Value at [1] is [1030402]
+20151221 17:14:47 Value at [2] is [020]
+20151221 17:14:47 Value at [3] is [0200000085379000]
+20151221 17:14:47 Value at [4] is [20000]
+20151221 17:14:47 Value at [5] is [VND]
+20151221 17:14:47 Value at [6] is []
+20151221 17:15:09 Has Error at 103 Exception
+20151221 17:15:09 java.lang.ArrayIndexOutOfBoundsException: 4
+20151221 17:16:49 The Data WS Transfer to Unpack SPLITTED into  [7] parts
+20151221 17:16:49 The Data WS Transfer to Unpack is [1031030402020020000008537900020000VND]
+20151221 17:16:49 The Message Type is [103] Boolean is true
+20151221 17:16:49 Can go to 103
+20151221 17:16:49 In the Status is [7] parts
+20151221 17:16:49 Value at [0] is [103]
+20151221 17:16:49 Value at [1] is [1030402]
+20151221 17:16:49 Value at [2] is [020]
+20151221 17:16:49 Value at [3] is [0200000085379000]
+20151221 17:16:49 Value at [4] is [20000]
+20151221 17:16:49 Value at [5] is [VND]
+20151221 17:16:49 Value at [6] is []
+20151221 17:17:11 Has Error at 103 Exception
+20151221 17:17:11 java.lang.ArrayIndexOutOfBoundsException: 4

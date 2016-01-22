@@ -1,0 +1,26 @@
+20151223 17:08:20 The Data WS Transfer to Unpack SPLITTED into  [7] parts
+20151223 17:08:20 The Data WS Transfer to Unpack is [1031030402020020000008537900000224466VND]
+20151223 17:08:20 The Message Type is [103] Boolean is true
+20151223 17:08:20 Can go to 103
+20151223 17:08:20 In the Status is [7] parts
+20151223 17:08:20 Value at [0] is [103]
+20151223 17:08:20 Value at [1] is [1030402]
+20151223 17:08:20 Value at [2] is [020]
+20151223 17:08:20 Value at [3] is [0200000085379000]
+20151223 17:08:20 Value at [4] is [00224466]
+20151223 17:08:20 Value at [5] is [VND]
+20151223 17:08:20 Value at [6] is []
+20151223 17:09:08 The Data WS Transfer to Unpack SPLITTED into  [7] parts
+20151223 17:09:08 The Data WS Transfer to Unpack is [1031030402020020000008537900000224466VND]
+20151223 17:09:08 The Message Type is [103] Boolean is true
+20151223 17:09:08 Can go to 103
+20151223 17:09:08 In the Status is [7] parts
+20151223 17:09:08 Value at [0] is [103]
+20151223 17:09:08 Value at [1] is [1030402]
+20151223 17:09:08 Value at [2] is [020]
+20151223 17:09:08 Value at [3] is [0200000085379000]
+20151223 17:09:09 Value at [4] is [00224466]
+20151223 17:09:09 Value at [5] is [VND]
+20151223 17:09:09 Value at [6] is []
+20151223 17:09:30 Has Error at 103 Exception
+20151223 17:09:30 java.lang.ArrayIndexOutOfBoundsException: 4

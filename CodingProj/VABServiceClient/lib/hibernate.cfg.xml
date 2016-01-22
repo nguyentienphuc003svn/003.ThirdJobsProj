@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='GBK'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<!-- SQL dialect -->
+		<property name="dialect">org.hibernate.dialect.InformixDialect</property>
+		<!-- Database connection settings -->
+		<property name="current_session_context_class">thread</property>
+		<!-- Fetch Size 是设定JDBC的Statement读取数据的时候每次从数据库中取出的记录条数 -->
+		<property name="jdbc.fetch_size">100</property>
+		<!-- Batch Size是设定对数据库进行批量删除，批量更新和批量插入的时候的批次大小，有点相当于设置Buffer缓冲区大小的意思 -->
+		<property name="jdbc.batch_size ">20</property>
+		<!-- property name="connection.driver_class">com.informix.jdbc.IfxDriver</property>
+		<property name="connection.url">jdbc:informix-sqli://192.168.1.6:5050/obts:INFORMIXSERVER=obts</property>
+		<property name="connection.username">informix</property>
+		<property name="connection.password">informix</property -->
+		<property name="connection.datasource">java:comp/env/jdbc/informix</property>
+		<!-- JDBC connection pool (use the built-in) -->
+		<property name="connection.pool_size">1</property>
+
+		<!-- Enable Hibernate's automatic session context management -->
+		<property name="current_session_context_class">thread</property>
+
+		<!-- Disable the second-level cache  -->
+		<property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+
+		<!-- Echo all executed SQL to stdout -->
+		<property name="show_sql">false</property>
+
+		<!-- Drop and re-create the database schema on startup -->
+		<property name="hbm2ddl.auto">create</property>
+
+		<!-- mapping resource="C001.hbm.xml"/ -->
+		<!-- mapping resource="events/Person.hbm.xml" -->
+
+	</session-factory>
+
+</hibernate-configuration>
+
