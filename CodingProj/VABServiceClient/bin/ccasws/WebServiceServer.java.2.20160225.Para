@@ -535,11 +535,9 @@ class ViewTransParser implements Runnable {
 			String atmGLAccNo = mypackBuf[7].trim();
 
 			//Do the Deposit Txn
-			//CasaTransfer instance = new CasaTransfer("EBANKING", "http://192.168.31.200:7001/FCCGateway/CASAGatewayService", "600000");
-			CasaTransfer instance = new CasaTransfer("GRG", 1);
-			
-			//String[] out = instance.casaToCasaTransferGRG("IN07", atmGLAccBr, atmGLAccNo, revbranch, revacc, depositamt, currency, "Deposit to Acc " + revacc, traceno);
-			String[] out = instance.casaToCasaTransferGRG(instance.getPrdCode().trim(), atmGLAccBr, atmGLAccNo, revbranch, revacc, depositamt, currency, "Deposit to Acc " + revacc, traceno);
+			CasaTransfer instance = new CasaTransfer("EBANKING", "http://192.168.31.200:7001/FCCGateway/CASAGatewayService", "600000");
+			String[] out = instance.casaToCasaTransferGRG("IN07", atmGLAccBr, atmGLAccNo, 
+					revbranch, revacc, depositamt, currency, "Deposit to Acc " + revacc, traceno);
 
 			System.out.println("\n Status: " + out[0]);
 			System.out.println("\n Trace No " + out[1]);

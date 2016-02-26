@@ -1,0 +1,18 @@
+		    
+2.12  Show how the Java syntax for IfThenStatement eliminates any ambiguity in the statement of the previous exercise. That is, sketch the parse tree using the Java BNF rules, and then argue that no other parse trees can be found using these rules.
+	
+	if (x < 0) if (x == 0) y = y - 1; else y = 0;
+	
+						IfThenElseStatement
+				 / 	    /		|	     \	      \
+			      if  (Expression)  StatementNoShortIf   else  Statement
+				  	|		|                      |
+				     (x < 0) 	  IfThenStatement            y = 0;
+			      		        /	|        \
+			    		       if  (Expression)  Statement
+			    			        |            |
+			    			    (x == 0)      y = y - 1;
+			    			    
+	There could be no other parse trees using the given Java BNF rules because at any point during the derivation there is only one rule that is applicable.
+
+

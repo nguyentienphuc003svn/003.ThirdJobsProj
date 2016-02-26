@@ -1,10 +1,13 @@
 package com.vab.iflex.gateway.paybillservice;
 
 
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.io.StringReader;
 import java.io.StringWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -29,12 +32,12 @@ import ccasws.CLog;
  */
 public class DemoApp {
 
-	private final String _accesskey = "iz1VlwidWkjUelpgfISs";
-	private final String _partnercode = "VIETABANK";
-	private final String _signature = "@Q.wv60q{zV>}~&$;R{=Y[ ]MVy1B+fy\"u835~)u";
+	private  String _accesskey = "iz1VlwidWkjUelpgfISs";
+	private  String _partnercode = "VIETABANK";
+	private  String _signature = "@Q.wv60q{zV>}~&$;R{=Y[ ]MVy1B+fy\"u835~)u";
 
 	//private final String urlws = "http://localhost:8084/wsgwatm/services/WSBean";//http://sandbox.ebanking.vietabank.com.vn/wsebankgateway/services/WSBean";
-	private final String urlws = "http://192.168.31.215:8080/wsgwatm/services/WSBean";//http://sandbox.ebanking.vietabank.com.vn/wsebankgateway/services/WSBean";
+	private  String urlws = "http://192.168.31.215:8080/wsgwatm/services/WSBean";//http://sandbox.ebanking.vietabank.com.vn/wsebankgateway/services/WSBean";
 
 	private final String timeout = "60000";
 	private final String l_methodname = "processPayment";
@@ -46,8 +49,11 @@ public class DemoApp {
 	public String srcAcc = "<srcAccount><AccountNoDTO><nbrAccount>0209000035849000</nbrAccount></AccountNoDTO></srcAccount>";
 
 	public static final String US = Character.toString((char) 0x1F);
-
-
+	
+	public DemoApp()
+	{
+		this.loadPara();
+	}
 
 	private Object[] callWsGateway(String methodname, Object[] objs) throws Exception {
 
@@ -452,6 +458,42 @@ public class DemoApp {
 
 		return sw.toString().trim();
 		//System.out.println(sw.toString());  
+	}
+	
+	public void loadPara()
+	{
+		Properties prop = new Properties();
+		InputStream input = null;
+
+		try {
+			input = new FileInputStream("webservicecfg.properties");
+
+			// load a properties file
+			prop.load(input);
+
+			// get the property value and print it out
+			System.out.println(prop.getProperty("bill_url"));
+			this.urlws = prop.getProperty("bill_url").trim();
+			System.out.println(prop.getProperty("bill_accesskey"));
+			this._accesskey = prop.getProperty("bill_accesskey");
+			System.out.println(prop.getProperty("bill_partnercode"));
+			this._partnercode = prop.getProperty("bill_partnercode").trim();
+			System.out.println(prop.getProperty("bill_signature"));
+			this._signature = prop.getProperty("bill_signature").trim();
+		} 
+		catch (Exception ex) {
+			ex.getMessage();
+			ex.printStackTrace();
+		} finally {
+			if (input != null) {
+				try {
+					input.close();
+				} catch (Exception e) {
+					e.getMessage();
+					e.printStackTrace();
+				}
+			}
+		}
 	}
 
 	public static void main(String[] args) {

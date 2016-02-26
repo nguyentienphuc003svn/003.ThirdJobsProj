@@ -1,0 +1,56 @@
+
+2.14 Give a grammar and an example if statement for each of the following languages: 
+(a) Perl, 
+Conditional:
+	"if" Cond "then" Block "end"
+	| "if" Cond "then" Block "else" Block "end"
+
+Example:	
+if ($x > 10) {
+	print "$x is greater than 10!";
+} else {
+	print "$x is not greater than 10!";
+}
+print "<br />";	
+
+
+
+(b) Python, 
+if_stmt ::=  "if" expression ":" suite
+             ( "elif" expression ":" suite )*
+             ["else" ":" suite]
+
+Example:
+if temperature > 70:
+    print('Wear shorts.')
+else:
+    print('Wear long pants.')
+print('Get some exercise outside.')
+	
+
+			 
+(c) Ada.
+if_statement ::= 
+      "if" condition "then" 
+      sequence_of_statements 
+      { "elsif" condition "then" 
+      sequence_of_statements } 
+      [ "else" 
+      sequence_of_statements ] 
+      "end" "if" ";"
+	  
+Example:	  
+if Temperature >= 40.0 then
+    Put_Line ("Wow!");
+    Put_Line ("It's extremely hot");
+elsif Temperature >= 30.0 then
+    Put_Line ("It's hot");
+elsif Temperature >= 20.0 then
+    Put_Line ("It's warm");
+elsif Temperature >= 10.0 then
+    Put_Line ("It's cool");
+elsif Temperature >= 0.0 then
+    Put_Line ("It's cold");
+else
+    Put_Line ("It's freezing");
+end if; 
